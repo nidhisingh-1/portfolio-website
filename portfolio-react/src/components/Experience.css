@@ -1,0 +1,29 @@
+.experience-item {
+  padding: 2rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.experience-item h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.experience-time {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.experience-role {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}

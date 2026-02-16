@@ -1,0 +1,87 @@
+.side-menu {
+  position: fixed;
+  left: 6rem;
+  top: 8rem;
+  z-index: 1000;
+}
+
+.side-menu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.side-menu li {
+  position: relative;
+  padding-left: 1rem;
+}
+
+.side-menu li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%) translateX(-10px);
+  width: 12px;
+  height: 12px;
+  background: #0066FF;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.side-menu li:hover::before,
+.side-menu li.active::before {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+.side-menu a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 400;
+  display: block;
+  transition: all 0.3s ease;
+  transform: translateX(0);
+}
+
+.side-menu li:hover a,
+.side-menu li.active a {
+  color: var(--text-primary);
+  transform: translateX(8px);
+}
+
+@media (max-width: 1400px) {
+  .side-menu {
+    left: 5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .side-menu {
+    left: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .side-menu {
+    left: 2rem;
+    top: 6rem;
+  }
+  
+  .side-menu ul {
+    gap: 0.5rem;
+  }
+  
+  .side-menu a {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .side-menu {
+    left: 1.5rem;
+  }
+}
