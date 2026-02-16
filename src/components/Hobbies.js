@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import './Hobbies.css';
 import { content } from '../content';
@@ -6,17 +6,19 @@ import { content } from '../content';
 const Hobbies = () => {
   const { hobbies } = content;
   const scrollRef = useRef(null);
+  const animationRef = useRef(null);
+  const [isManualScroll, setIsManualScroll] = useState(false);
 
-  // Auto-scroll horizontally
+  // Auto-scroll horizontally with faster speed
   useEffect(() => {
     const scrollContainer = scrollRef.current;
     if (!scrollContainer) return;
 
     let scrollAmount = 0;
-    const scrollSpeed = 0.5; // pixels per frame
+    const scrollSpeed = 1.2;
 
     const scroll = () => {
-      if (scrollContainer) {
+      if (scrollContainer && !isManualScroll) {
         scrollAmount += scrollSpeed;
         scrollContainer.scrollLeft = scrollAmount;
 
@@ -25,12 +27,43 @@ const Hobbies = () => {
           scrollAmount = 0;
         }
       }
+      animationRef.current = requestAnimationFrame(scroll);
     };
 
-    const intervalId = setInterval(scroll, 30);
+    animationRef.current = requestAnimationFrame(scroll);
 
-    return () => clearInterval(intervalId);
-  }, []);
+    return () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+    };
+  }, [isManualScroll]);
+
+  const handleScrollLeft = () => {
+    if (scrollRef.current) {
+      setIsManualScroll(true);
+      // Scroll by exactly one image width + gap (200px + 16px gap)
+      scrollRef.current.scrollBy({ left: -216, behavior: 'smooth' });
+      
+      // Resume auto-scroll after 2 seconds
+      setTimeout(() => {
+        setIsManualScroll(false);
+      }, 2000);
+    }
+  };
+
+  const handleScrollRight = () => {
+    if (scrollRef.current) {
+      setIsManualScroll(true);
+      // Scroll by exactly one image width + gap (200px + 16px gap)
+      scrollRef.current.scrollBy({ left: 216, behavior: 'smooth' });
+      
+      // Resume auto-scroll after 2 seconds
+      setTimeout(() => {
+        setIsManualScroll(false);
+      }, 2000);
+    }
+  };
 
   return (
     <section id="hobbies">
@@ -55,48 +88,66 @@ const Hobbies = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <div className="gallery-scroll-container" ref={scrollRef}>
-            <div className="gallery-row">
-              {hobbies.images.map((image, index) => (
-                <motion.div
-                  key={index}
-                  className="gallery-item"
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                >
-                  <div className="gallery-image-wrapper">
-                    <img 
-                      src={image.src} 
-                      alt={image.alt}
-                      className="gallery-image"
-                    />
+          <div className="gallery-wrapper">
+            <button 
+              className="gallery-arrow gallery-arrow-left" 
+              onClick={handleScrollLeft}
+              aria-label="Scroll left"
+            >
+              ←
+            </button>
+            
+            <div className="gallery-scroll-container" ref={scrollRef}>
+              <div className="gallery-row">
+                {hobbies.images.map((image, index) => (
+                  <motion.div
+                    key={index}
+                    className="gallery-item"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                  >
+                    <div className="gallery-image-wrapper">
+                      <img 
+                        src={image.src} 
+                        alt={image.alt}
+                        className="gallery-image"
+                      />
+                    </div>
+                    {image.caption && (
+                      <p className="gallery-caption">{image.caption}</p>
+                    )}
+                  </motion.div>
+                ))}
+                {/* Duplicate images for seamless loop */}
+                {hobbies.images.map((image, index) => (
+                  <div
+                    key={`duplicate-${index}`}
+                    className="gallery-item"
+                  >
+                    <div className="gallery-image-wrapper">
+                      <img 
+                        src={image.src} 
+                        alt={image.alt}
+                        className="gallery-image"
+                      />
+                    </div>
+                    {image.caption && (
+                      <p className="gallery-caption">{image.caption}</p>
+                    )}
                   </div>
-                  {image.caption && (
-                    <p className="gallery-caption">{image.caption}</p>
-                  )}
-                </motion.div>
-              ))}
-              {/* Duplicate images for seamless loop */}
-              {hobbies.images.map((image, index) => (
-                <div
-                  key={`duplicate-${index}`}
-                  className="gallery-item"
-                >
-                  <div className="gallery-image-wrapper">
-                    <img 
-                      src={image.src} 
-                      alt={image.alt}
-                      className="gallery-image"
-                    />
-                  </div>
-                  {image.caption && (
-                    <p className="gallery-caption">{image.caption}</p>
-                  )}
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
+
+            <button 
+              className="gallery-arrow gallery-arrow-right" 
+              onClick={handleScrollRight}
+              aria-label="Scroll right"
+            >
+              →
+            </button>
           </div>
         </motion.div>
       </div>

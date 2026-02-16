@@ -17,6 +17,14 @@
   color: #0052CC;
 }
 
+[data-theme="dark"] .contact-link {
+  color: #00FF9F;
+}
+
+[data-theme="dark"] .contact-link:hover {
+  color: #00E68F;
+}
+
 @media (max-width: 768px) {
   .contact-links {
     gap: 1.5rem;

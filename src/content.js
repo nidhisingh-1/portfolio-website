@@ -11,6 +11,7 @@ export const content = {
     { id: 'about', label: 'About me' },
     { id: 'experience', label: 'Experience' },
     { id: 'hobbies', label: 'Hobbies' },
+    { id: 'contact', label: 'Contact' },
     { id: 'resume', label: 'Resume', type: 'download', url: '/resume.pdf' }
   ],
 
@@ -34,7 +35,7 @@ export const content = {
     items: [
       {
         id: 1,
-        image: '/images/project1.jpg',
+        image: '/images/project-placeholder.jpg',
         tags: ['Conversational AI', 'Product Design', '0→1 Launch'],
         title: 'Vini - AI-Powered Conversational Platform',
         description: 'Led end-to-end UX for Spyne\'s Conversational AI platform from scratch. Designed onboarding, agent management, live chat, calls, and Smart View features for direct customer-dealer engagement.',
@@ -42,7 +43,7 @@ export const content = {
       },
       {
         id: 2,
-        image: '/images/project2.jpg',
+        image: '/images/project-placeholder2.jpg',
         tags: ['Enterprise UX', 'AI Integration', 'Information Architecture'],
         title: 'AI-Powered Inventory Management System',
         description: 'Designed Spyne\'s inventory management system for used car dealers. Covered vehicle onboarding, pricing prediction, invoicing, publishing, and sales management. Simplified complex workflows while maintaining data density.',
@@ -50,7 +51,7 @@ export const content = {
       },
       {
         id: 3,
-        image: '/images/project3.jpg',
+        image: '/images/project-placeholder.jpg',
         tags: ['Design Systems', 'Workflow Optimization', 'Media Generation'],
         title: 'Virtual Studio Platform Unification',
         description: 'Unified multiple media generation pipelines (images, 360° spins, video tours) into a single Virtual Studio platform. Created cohesive experience across different media types.',
@@ -58,7 +59,7 @@ export const content = {
       },
       {
         id: 4,
-        image: '/images/project4.jpg',
+        image: '/images/project-placeholder2.jpg',
         tags: ['Platform Revamp', 'Branding', 'Design Leadership'],
         title: 'Intervue.io Complete Platform Redesign',
         description: 'Led complete design revamp and branding as sole designer. Redesigned landing pages, dashboards, interviewer flows, and built scalable UI systems for question banks and assignments.',
@@ -66,7 +67,7 @@ export const content = {
       },
       {
         id: 5,
-        image: '/images/project5.jpg',
+        image: '/images/project-placeholder.jpg',
         tags: ['User Research', 'Prototyping', 'User Testing'],
         title: 'Talkout - Real-Time Voice Conversations (Coto)',
         description: 'Designed and tested voice conversation features and swipe-based content flows. Conducted user research and iterative testing to improve retention and in-app activity.',
@@ -125,22 +126,27 @@ export const content = {
       {
         src: '/images/hobby1.jpg',
         alt: 'Hobby 1',
-        caption: 'Add your caption here'
+        caption: 'Creative pursuit 1'
       },
       {
         src: '/images/hobby2.jpg',
         alt: 'Hobby 2',
-        caption: 'Add your caption here'
+        caption: 'Creative pursuit 2'
       },
       {
         src: '/images/hobby3.jpg',
         alt: 'Hobby 3',
-        caption: 'Add your caption here'
+        caption: 'Creative pursuit 3'
       },
       {
         src: '/images/hobby4.jpg',
         alt: 'Hobby 4',
-        caption: 'Add your caption here'
+        caption: 'Creative pursuit 4'
+      },
+      {
+        src: '/images/hobby5.jpg',
+        alt: 'Hobby 5',
+        caption: 'Creative pursuit 5'
       }
     ]
   },
@@ -152,12 +158,13 @@ export const content = {
     links: [
       { label: 'Email', url: 'mailto:nidhi232singh@gmail.com' },
       { label: 'LinkedIn', url: 'https://linkedin.com/in/nidhi-singh' },
-      { label: 'Portfolio', url: 'https://yourportfolio.com' }
+      { label: 'Instagram', url: 'https://instagram.com/yourusername' },
+      { label: 'X (Twitter)', url: 'https://x.com/yourusername' }
     ]
   },
 
   // FOOTER
   footer: {
-    text: '© 2026 Nidhi. Designed & built with care.'
+    text: '© 2026 Nidhi. Crafted in Figma ✨ Brought to life with Cursor.'
   }
 };
