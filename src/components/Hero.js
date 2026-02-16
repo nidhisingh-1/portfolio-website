@@ -71,11 +71,35 @@ const Hero = () => {
           </h1>
           
           <p className="subtitle">
-            Currently designing at {theme === 'dark' ? <SpyneLogo2 className="inline-logo" /> : <SpyneLogo className="inline-logo" />}, {hero.currentLocation}.
+            Currently designing at <a 
+              href="https://www.spyne.ai" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="logo-link"
+              data-tooltip="https://www.spyne.ai"
+            >
+              {theme === 'dark' ? <SpyneLogo2 className="inline-logo" /> : <SpyneLogo className="inline-logo" />}
+            </a>, {hero.currentLocation}.
           </p>
           
           <p>
-            I previously solved for {hero.previousWork} at <strong>{hero.previousCompany1}</strong> + {hero.previousWork2} at <strong>{hero.previousCompany2}</strong>. {hero.description}
+            I previously solved for {hero.previousWork} at <a 
+              href="https://www.intervue.io/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="company-link"
+              data-tooltip="https://www.intervue.io/"
+            >
+              <strong>{hero.previousCompany1}</strong>
+            </a> + {hero.previousWork2} at <a 
+              href="https://coto.world/global" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="company-link"
+              data-tooltip="https://coto.world/global"
+            >
+              <strong>{hero.previousCompany2}</strong>
+            </a>. {hero.description}
           </p>
         </div>
       </div>

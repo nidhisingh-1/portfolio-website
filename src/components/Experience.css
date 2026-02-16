@@ -3,6 +3,11 @@
   border-top: 1px solid var(--border);
 }
 
+.experience-item:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
 .experience-header {
   display: flex;
   justify-content: space-between;

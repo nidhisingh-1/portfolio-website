@@ -3,6 +3,7 @@
   gap: 2rem;
   margin-top: 2rem;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .contact-link {
@@ -16,6 +17,90 @@
 .contact-link:hover {
   color: #0052CC;
 }
+
+/* Email link with tooltip */
+.email-link-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.email-trigger {
+  cursor: pointer;
+}
+
+.email-tooltip {
+  position: absolute;
+  bottom: calc(100% + 16px);
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  padding: 10px 14px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 10000;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .email-tooltip {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+.email-tooltip::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: var(--text-primary);
+  z-index: 10000;
+}
+
+.email-link-wrapper:hover .email-tooltip {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.email-address {
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.tooltip-copy-btn {
+  background: transparent;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--bg-primary);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  border-radius: 4px;
+}
+
+.tooltip-copy-btn:hover {
+  transform: scale(1.15);
+  opacity: 0.8;
+}
+
+.tooltip-copy-btn:active {
+  transform: scale(0.95);
+}
+
+.tooltip-copy-icon {
+  flex-shrink: 0;
+}
+
 
 [data-theme="dark"] .contact-link {
   color: #00FF9F;
@@ -34,11 +119,36 @@
   .contact-link {
     font-size: 0.85rem;
   }
+
+  .email-tooltip {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+
+  .tooltip-copy-icon {
+    width: 14px;
+    height: 14px;
+  }
 }
 
 @media (max-width: 480px) {
   .contact-links {
     flex-direction: column;
     gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .email-tooltip {
+    left: 0;
+    transform: translateX(0) translateY(8px);
+  }
+
+  .email-tooltip::before {
+    left: 20px;
+    transform: translateX(0);
+  }
+
+  .email-link-wrapper:hover .email-tooltip {
+    transform: translateX(0) translateY(0);
   }
 }
