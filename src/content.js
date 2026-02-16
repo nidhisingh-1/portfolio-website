@@ -80,9 +80,7 @@ export const content = {
   about: {
     sectionTitle: 'About me',
     paragraphs: [
-      "I'm a Product Designer with 3+ years of experience crafting user-centered digital experiences. I believe great design should be invisible—it just works.",
-      "Over the past 3+ years, I've worked across AI-powered platforms, conversational interfaces, and enterprise tools, which has given me a deep understanding of complex product ecosystems. I specialize in end-to-end product design—from discovery and research to high-fidelity design—and love the challenge of leading 0→1 initiatives.",
-      "My approach combines rigorous user research with rapid prototyping and iteration. I'm adept at balancing user empathy with business impact, and I thrive in environments where designers, engineers, and product teams work closely together. I've led design as a solo designer and collaborated cross-functionally with PMs and engineers to deliver intuitive, scalable products.",
+      "I'm a Product Designer with 3+ years of experience crafting user-centered digital experiences. I specialize in end-to-end product design, leading complex 0→1 initiatives, and balancing user empathy with business impact.",
       "I have strong proficiency in Figma, Adobe Creative Suite, prototyping tools, and even basics of React, HTML, CSS, and JavaScript. I'm always learning and exploring how design and technology can come together to create delightful experiences."
     ]
   },
