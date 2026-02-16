@@ -210,6 +210,12 @@ section {
   .section-header {
     margin-bottom: 1.5rem;
   }
+
+  /* Hide desktop theme/contrast toggles */
+  .App > .theme-toggle,
+  .App > .contrast-toggle {
+    display: none;
+  }
 }
 
 @media (max-width: 480px) {

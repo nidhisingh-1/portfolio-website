@@ -53,31 +53,34 @@
 }
 
 @media (max-width: 768px) {
-  .contrast-toggle {
-    top: 4.5rem;
-    right: 1.5rem;
-    width: 40px;
-    height: 40px;
+  /* Hide standalone desktop toggles */
+  .App > .contrast-toggle {
+    display: none;
   }
 
-  .bold-a {
-    font-size: 18px;
-  }
-
-  .contrast-toggle:hover {
-    transform: scale(1.05);
+  /* Show when inside mobile header */
+  .mobile-header .contrast-toggle {
+    display: flex !important;
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
   }
 }
 
 @media (max-width: 480px) {
-  .contrast-toggle {
-    top: 4.25rem;
-    right: 1rem;
+  /* Hide standalone desktop toggles */
+  .App > .contrast-toggle {
+    display: none;
+  }
+
+  /* Show when inside mobile header */
+  .mobile-header .contrast-toggle {
+    display: flex !important;
     width: 36px;
     height: 36px;
   }
 
-  .bold-a {
+  .mobile-header .contrast-toggle .bold-a {
     font-size: 16px;
   }
 }

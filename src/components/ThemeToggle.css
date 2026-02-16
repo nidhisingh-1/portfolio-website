@@ -47,32 +47,34 @@
 }
 
 @media (max-width: 768px) {
-  .theme-toggle {
-    top: 1.25rem;
-    right: 1.5rem;
-    width: 40px;
-    height: 40px;
+  /* Hide standalone desktop toggles */
+  .App > .theme-toggle {
+    display: none;
   }
 
-  .theme-toggle svg {
-    width: 18px;
-    height: 18px;
-  }
-
-  .theme-toggle:hover {
-    transform: scale(1.05);
+  /* Show when inside mobile header */
+  .mobile-header .theme-toggle {
+    display: flex !important;
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
   }
 }
 
 @media (max-width: 480px) {
-  .theme-toggle {
-    top: 1rem;
-    right: 1rem;
+  /* Hide standalone desktop toggles */
+  .App > .theme-toggle {
+    display: none;
+  }
+
+  /* Show when inside mobile header */
+  .mobile-header .theme-toggle {
+    display: flex !important;
     width: 36px;
     height: 36px;
   }
 
-  .theme-toggle svg {
+  .mobile-header .theme-toggle svg {
     width: 16px;
     height: 16px;
   }
