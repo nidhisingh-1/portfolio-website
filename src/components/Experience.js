@@ -11,10 +11,10 @@ const Experience = () => {
       <div className="container">
         <motion.div 
           className="section-header"
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
         >
           <h2 className="section-title">{experience.sectionTitle}</h2>
         </motion.div>
@@ -24,10 +24,10 @@ const Experience = () => {
             <motion.div
               key={exp.id}
               className="experience-item"
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ duration: 0.6, delay: index * 0.1, ease: [0.25, 0.1, 0.25, 1] }}
             >
               <div className="experience-header">
                 <h3>{exp.company}</h3>

@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import './Hero.css';
 import { content } from '../content';
 import { ReactComponent as SpyneLogo } from '../assets/logos/Spyne Logo.svg';
@@ -51,7 +52,12 @@ const Hero = () => {
   return (
     <section id="hero">
       <div className="container">
-        <div className="hero-content">
+        <motion.div 
+          className="hero-content"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+        >
           <h1>
             I'm {hero.name}<span className="avatar-wrapper">
               <img 
@@ -101,7 +107,7 @@ const Hero = () => {
               <strong>{hero.previousCompany2}</strong>
             </a>. {hero.description}
           </p>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

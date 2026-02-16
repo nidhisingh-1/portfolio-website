@@ -112,10 +112,10 @@ const Hobbies = () => {
       <div className="container">
         <motion.div 
           className="section-header"
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
         >
           <h2 className="section-title">{hobbies.sectionTitle}</h2>
           {hobbies.description && (
@@ -125,10 +125,10 @@ const Hobbies = () => {
         
         <motion.div 
           className="hobbies-gallery"
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          transition={{ duration: 0.6, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
         >
           <div className="gallery-wrapper">
             <button 
@@ -145,10 +145,10 @@ const Hobbies = () => {
                   <motion.div
                     key={index}
                     className="gallery-item"
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    transition={{ duration: 0.6, delay: index * 0.1, ease: [0.25, 0.1, 0.25, 1] }}
                   >
                     <div className="gallery-image-wrapper">
                       <img 

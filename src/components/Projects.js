@@ -7,14 +7,14 @@ const Projects = () => {
   const { projects } = content;
   
   const cardVariants = {
-    hidden: { opacity: 0, x: -30 },
+    hidden: { opacity: 0, y: 30 },
     visible: (i) => ({
       opacity: 1,
-      x: 0,
+      y: 0,
       transition: {
         delay: i * 0.1,
-        duration: 0.5,
-        ease: 'easeOut'
+        duration: 0.6,
+        ease: [0.25, 0.1, 0.25, 1]
       }
     })
   };
@@ -24,10 +24,10 @@ const Projects = () => {
       <div className="container">
         <motion.div 
           className="section-header"
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
         >
           <h2 className="section-title">{projects.sectionTitle}</h2>
         </motion.div>
