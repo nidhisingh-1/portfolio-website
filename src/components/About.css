@@ -4,3 +4,18 @@
   line-height: 1.8;
   margin-bottom: 1.5rem;
 }
+
+@media (max-width: 768px) {
+  .about-content p {
+    font-size: 0.875rem;
+    margin-bottom: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-content p {
+    font-size: 0.85rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+}

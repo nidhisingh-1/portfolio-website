@@ -42,16 +42,22 @@ const Projects = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
-              whileHover={{ x: 8, transition: { duration: 0.2 } }}
             >
-              <div className="project-tags">
-                {project.tags.map((tag, i) => (
-                  <span key={i} className="tag">{tag}</span>
-                ))}
+              {project.image && (
+                <div className="project-image">
+                  <img src={project.image} alt={project.title} />
+                </div>
+              )}
+              <div className="project-content">
+                <div className="project-tags">
+                  {project.tags.map((tag, i) => (
+                    <span key={i} className="tag">{tag}</span>
+                  ))}
+                </div>
+                <h3>{project.title}</h3>
+                <p>{project.description}</p>
+                <p className="project-impact">{project.impact}</p>
               </div>
-              <h3>{project.title}</h3>
-              <p>{project.description}</p>
-              <p className="project-impact">{project.impact}</p>
             </motion.article>
           ))}
         </div>

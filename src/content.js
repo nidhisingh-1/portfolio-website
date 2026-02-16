@@ -9,7 +9,9 @@ export const content = {
     { id: 'hero', label: 'Hello' },
     { id: 'work', label: 'Work' },
     { id: 'about', label: 'About me' },
-    { id: 'experience', label: 'Experience' }
+    { id: 'experience', label: 'Experience' },
+    { id: 'hobbies', label: 'Hobbies' },
+    { id: 'resume', label: 'Resume', type: 'download', url: '/resume.pdf' }
   ],
 
   // HERO SECTION
@@ -32,38 +34,43 @@ export const content = {
     items: [
       {
         id: 1,
+        image: '/images/project1.jpg',
         tags: ['Conversational AI', 'Product Design', '0→1 Launch'],
         title: 'Vini - AI-Powered Conversational Platform',
-        description: 'Drove end-to-end UX for Spyne\'s Conversational AI (Vini) from scratch, including onboarding, agent management, live chat, calls, action items and smart conversation modules. Designed web widgets and Smart View features to enable direct customer engagement (call/chat/email) with AI agents on Vehicle Detail Pages.',
-        impact: 'Impact: Launched complete conversational AI platform from 0→1, enabling seamless customer-dealer interactions'
+        description: 'Led end-to-end UX for Spyne\'s Conversational AI platform from scratch. Designed onboarding, agent management, live chat, calls, and Smart View features for direct customer-dealer engagement.',
+        impact: 'Impact: Launched complete conversational AI platform from 0→1'
       },
       {
         id: 2,
+        image: '/images/project2.jpg',
         tags: ['Enterprise UX', 'AI Integration', 'Information Architecture'],
         title: 'AI-Powered Inventory Management System',
-        description: 'Led the design of Spyne\'s AI-powered inventory management system for used car dealers. Covered comprehensive modules including vehicle onboarding, pricing prediction, invoicing, publishing, website score, media score and sales management. Focused on simplifying complex workflows while maintaining data density.',
-        impact: 'Impact: Streamlined dealer operations across multiple touchpoints, reducing manual work significantly'
+        description: 'Designed Spyne\'s inventory management system for used car dealers. Covered vehicle onboarding, pricing prediction, invoicing, publishing, and sales management. Simplified complex workflows while maintaining data density.',
+        impact: 'Impact: Streamlined dealer operations, reducing manual work significantly'
       },
       {
         id: 3,
+        image: '/images/project3.jpg',
         tags: ['Design Systems', 'Workflow Optimization', 'Media Generation'],
         title: 'Virtual Studio Platform Unification',
-        description: 'Unified multiple media generation pipelines (images, 360° spins, and video tours) into a single Virtual Studio platform. Simplified complex workflows for both internal teams and external users, creating a cohesive experience across different media types.',
-        impact: 'Impact: Reduced workflow complexity, improved efficiency for media generation across the platform'
+        description: 'Unified multiple media generation pipelines (images, 360° spins, video tours) into a single Virtual Studio platform. Created cohesive experience across different media types.',
+        impact: 'Impact: Reduced workflow complexity and improved efficiency'
       },
       {
         id: 4,
+        image: '/images/project4.jpg',
         tags: ['Platform Revamp', 'Branding', 'Design Leadership'],
         title: 'Intervue.io Complete Platform Redesign',
-        description: 'Owned the complete design revamp of the platform and branding as the sole designer for 1.5 years. Redesigned landing pages, dashboards, and interviewer flows. Built scalable UI systems for question banks, assignments, and "request an interviewer" features. Collaborated directly with founders and engineering team.',
-        impact: 'Impact: Improved conversion rates and student engagement through intuitive booking and interview experiences'
+        description: 'Led complete design revamp and branding as sole designer. Redesigned landing pages, dashboards, interviewer flows, and built scalable UI systems for question banks and assignments.',
+        impact: 'Impact: Improved conversion rates and student engagement'
       },
       {
         id: 5,
+        image: '/images/project5.jpg',
         tags: ['User Research', 'Prototyping', 'User Testing'],
         title: 'Talkout - Real-Time Voice Conversations (Coto)',
-        description: 'Designed and tested features like Talkout (real-time voice conversations) and swipe-based content engagement flows at Coto. Conducted user research and iterative testing to improve user retention and in-app activity for the social platform.',
-        impact: 'Impact: Improved user retention and in-app activity through engaging voice and content features'
+        description: 'Designed and tested voice conversation features and swipe-based content flows. Conducted user research and iterative testing to improve retention and in-app activity.',
+        impact: 'Impact: Improved user retention through engaging voice features'
       }
     ]
   },
@@ -106,6 +113,34 @@ export const content = {
         company: 'Coding Blocks',
         role: 'Creative Designer (Internship)',
         time: 'Apr 2022 - Sep 2022'
+      }
+    ]
+  },
+
+  // HOBBIES & CREATIVE SECTION
+  hobbies: {
+    sectionTitle: 'Hobbies & Creative',
+    description: 'Beyond design, I love exploring creative outlets and personal interests.',
+    images: [
+      {
+        src: '/images/hobby1.jpg',
+        alt: 'Hobby 1',
+        caption: 'Add your caption here'
+      },
+      {
+        src: '/images/hobby2.jpg',
+        alt: 'Hobby 2',
+        caption: 'Add your caption here'
+      },
+      {
+        src: '/images/hobby3.jpg',
+        alt: 'Hobby 3',
+        caption: 'Add your caption here'
+      },
+      {
+        src: '/images/hobby4.jpg',
+        alt: 'Hobby 4',
+        caption: 'Add your caption here'
       }
     ]
   },

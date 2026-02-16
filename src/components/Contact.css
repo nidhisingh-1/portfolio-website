@@ -16,3 +16,21 @@
 .contact-link:hover {
   color: #0052CC;
 }
+
+@media (max-width: 768px) {
+  .contact-links {
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .contact-link {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

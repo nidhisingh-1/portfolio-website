@@ -8,7 +8,13 @@ const Navigation = () => {
       <ul>
         {content.navigation.map((item) => (
           <li key={item.id}>
-            <a href={`#${item.id}`}>{item.label}</a>
+            {item.type === 'download' ? (
+              <a href={item.url} download className="download-link">
+                {item.label}
+              </a>
+            ) : (
+              <a href={`#${item.id}`}>{item.label}</a>
+            )}
           </li>
         ))}
       </ul>

@@ -27,3 +27,33 @@
   color: var(--text-secondary);
   font-size: 0.875rem;
 }
+
+@media (max-width: 768px) {
+  .experience-item {
+    padding: 1.5rem 0;
+  }
+
+  .experience-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .experience-item h3 {
+    font-size: 0.95rem;
+  }
+
+  .experience-time {
+    font-size: 0.75rem;
+  }
+
+  .experience-role {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .experience-item {
+    padding: 1.25rem 0;
+  }
+}
