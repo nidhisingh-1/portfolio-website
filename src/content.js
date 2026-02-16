@@ -18,7 +18,7 @@ export const content = {
   // HERO SECTION
   hero: {
     name: 'Nidhi',
-    title: 'UX Designer',
+    title: 'Product Designer',
     tagline: 'I answer user questions with thoughtful design + AI.',
     currentCompany: 'Spyne AI',
     currentLocation: 'Gurugram',
