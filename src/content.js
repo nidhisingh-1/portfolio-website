@@ -155,9 +155,9 @@ export const content = {
     subtitle: "I'm always interested in hearing about new projects and opportunities.",
     links: [
       { label: 'Email', url: 'mailto:nidhi232singh@gmail.com' },
-      { label: 'LinkedIn', url: 'https://linkedin.com/in/nidhi-singh' },
-      { label: 'Instagram', url: 'https://instagram.com/yourusername' },
-      { label: 'X (Twitter)', url: 'https://x.com/yourusername' }
+      { label: 'LinkedIn', url: 'https://www.linkedin.com/in/nidhisingh30/' },
+      { label: 'Instagram', url: 'https://www.instagram.com/coffeehoeee' },
+      { label: 'X (Twitter)', url: 'https://x.com/nidhisingh_30/' }
     ]
   },
 

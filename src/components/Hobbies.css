@@ -16,13 +16,20 @@
 }
 
 .gallery-scroll-container {
-  overflow-x: hidden;
+  overflow-x: auto;
   overflow-y: visible;
   width: 100%;
   margin: 0;
   padding: 0.5rem 0;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.gallery-scroll-container::-webkit-scrollbar {
+  display: none;
 }
 
 .gallery-row {

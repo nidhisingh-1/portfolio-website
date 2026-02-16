@@ -53,9 +53,30 @@
 
 .tag {
   font-size: 0.75rem;
-  color: var(--text-muted);
+  color: #0066FF;
   font-weight: 500;
   letter-spacing: 0.02em;
+  background: rgba(0, 102, 255, 0.1);
+  padding: 0.3rem 0.85rem;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 102, 255, 0.2);
+  transition: all 0.2s ease;
+}
+
+.tag:hover {
+  background: rgba(0, 102, 255, 0.15);
+  border-color: rgba(0, 102, 255, 0.3);
+}
+
+[data-theme="dark"] .tag {
+  color: #00FF9F;
+  background: rgba(0, 255, 159, 0.1);
+  border-color: rgba(0, 255, 159, 0.2);
+}
+
+[data-theme="dark"] .tag:hover {
+  background: rgba(0, 255, 159, 0.15);
+  border-color: rgba(0, 255, 159, 0.3);
 }
 
 .project-card h3 {
@@ -109,6 +130,7 @@
 
   .tag {
     font-size: 0.7rem;
+    padding: 0.25rem 0.75rem;
   }
 
   .project-card p {

@@ -8,6 +8,8 @@ const Hobbies = () => {
   const scrollRef = useRef(null);
   const animationRef = useRef(null);
   const [isManualScroll, setIsManualScroll] = useState(false);
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
 
   // Auto-scroll horizontally with faster speed
   useEffect(() => {
@@ -38,6 +40,46 @@ const Hobbies = () => {
       }
     };
   }, [isManualScroll]);
+
+  // Handle touch events for mobile swipe
+  useEffect(() => {
+    const scrollContainer = scrollRef.current;
+    if (!scrollContainer) return;
+
+    const handleTouchStart = (e) => {
+      touchStartX.current = e.touches[0].clientX;
+      setIsManualScroll(true);
+    };
+
+    const handleTouchMove = (e) => {
+      touchEndX.current = e.touches[0].clientX;
+    };
+
+    const handleTouchEnd = () => {
+      setTimeout(() => {
+        setIsManualScroll(false);
+      }, 2000);
+    };
+
+    const handleScroll = () => {
+      setIsManualScroll(true);
+      setTimeout(() => {
+        setIsManualScroll(false);
+      }, 2000);
+    };
+
+    scrollContainer.addEventListener('touchstart', handleTouchStart);
+    scrollContainer.addEventListener('touchmove', handleTouchMove);
+    scrollContainer.addEventListener('touchend', handleTouchEnd);
+    scrollContainer.addEventListener('scroll', handleScroll);
+
+    return () => {
+      scrollContainer.removeEventListener('touchstart', handleTouchStart);
+      scrollContainer.removeEventListener('touchmove', handleTouchMove);
+      scrollContainer.removeEventListener('touchend', handleTouchEnd);
+      scrollContainer.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   const handleScrollLeft = () => {
     if (scrollRef.current) {
