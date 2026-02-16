@@ -1,0 +1,79 @@
+.custom-cursor {
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  border: 2px solid var(--text-primary);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease, opacity 0.3s ease;
+  opacity: 1;
+}
+
+.custom-cursor-dot {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  background: var(--text-primary);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+  transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+  opacity: 1;
+}
+
+/* Hover state */
+.custom-cursor.cursor-hover {
+  width: 45px;
+  height: 45px;
+  border-width: 2px;
+}
+
+.custom-cursor-dot.cursor-hover {
+  transform: translate(-50%, -50%) scale(1.5);
+}
+
+/* Invert state for dark backgrounds */
+.custom-cursor.cursor-invert {
+  border-color: var(--bg-primary);
+}
+
+.custom-cursor-dot.cursor-invert {
+  background: var(--bg-primary);
+}
+
+/* Hide on mobile/touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .custom-cursor,
+  .custom-cursor-dot {
+    display: none;
+  }
+}
+
+/* Theme-specific colors */
+[data-theme="dark"] .custom-cursor {
+  border-color: #FFFFFF;
+}
+
+[data-theme="dark"] .custom-cursor-dot {
+  background: #FFFFFF;
+}
+
+[data-theme="light"] .custom-cursor {
+  border-color: #000000;
+}
+
+[data-theme="light"] .custom-cursor-dot {
+  background: #000000;
+}
+
+/* Make sure cursor is visible on all backgrounds */
+body {
+  cursor: none !important;
+}
+
+* {
+  cursor: none !important;
+}

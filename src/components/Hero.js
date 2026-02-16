@@ -1,17 +1,17 @@
 import React, { useRef, useEffect } from 'react';
 import './Hero.css';
 import { content } from '../content';
-import { ReactComponent as SpyneLogo } from '../Spyne Logo.svg';
-import { ReactComponent as SpyneLogo2 } from '../Spyne Logo 2.svg';
-import profileImage from '../nidhi.JPG';
+import { ReactComponent as SpyneLogo } from '../assets/logos/Spyne Logo.svg';
+import { ReactComponent as SpyneLogo2 } from '../assets/logos/Spyne Logo 2.svg';
 import gsap from 'gsap';
-import { useTheme } from '../ThemeContext';
+import { useTheme } from '../contexts/ThemeContext';
 
 const Hero = () => {
   const { hero } = content;
   const { theme } = useTheme();
   const avatarRef = useRef(null);
   const largeAvatarRef = useRef(null);
+  const profileImage = '/nidhi.jpg'; // Reference from public folder
   
   useEffect(() => {
     const avatar = avatarRef.current;
