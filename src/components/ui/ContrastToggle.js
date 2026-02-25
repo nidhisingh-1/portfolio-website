@@ -1,6 +1,6 @@
 import React from 'react';
 import './ContrastToggle.css';
-import { useTheme } from '../contexts/ThemeContext';
+import { useTheme } from '../../contexts/ThemeContext';
 
 const ContrastToggle = () => {
   const { contrast, toggleContrast } = useTheme();

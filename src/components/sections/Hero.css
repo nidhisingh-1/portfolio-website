@@ -106,7 +106,7 @@
   transform: translateX(-50%) translateY(0);
 }
 
-/* Company link styles */
+/* Company link styles — Intervue, Coto */
 .hero-content .company-link {
   position: relative;
   display: inline-block;
@@ -179,8 +179,6 @@
   transform: translateX(-50%) translateY(0);
 }
 
-
-
 .avatar-wrapper {
   position: relative;
   display: inline-block;
@@ -218,48 +216,13 @@
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
-@media (max-width: 1024px) {
-  #hero {
-    padding: 6rem 0;
-  }
-}
-
 @media (max-width: 768px) {
   #hero {
-    padding: 4rem 0;
-  }
-  
-  .hero-content h1 {
-    font-size: clamp(1.5rem, 5vw, 2rem);
-    margin-bottom: 1.5rem;
-  }
-
-  .hero-content .subtitle {
-    margin-bottom: 1rem;
+    padding: 6rem 0 5rem 0;
   }
   
   .hero-content .hero-avatar-large {
     width: 200px;
     height: 200px;
-  }
-}
-
-@media (max-width: 480px) {
-  #hero {
-    padding: 3rem 0;
-  }
-
-  .hero-content h1 {
-    font-size: 1.5rem;
-    line-height: 1.4;
-  }
-
-  .hero-content .inline-logo {
-    height: 1.2em;
-  }
-
-  .hero-content .hero-avatar-large {
-    width: 150px;
-    height: 150px;
   }
 }

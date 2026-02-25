@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './Navigation.css';
-import { content } from '../content';
+import { content } from '../../content';
 
-const Navigation = () => {
+const Navigation = ({ onResumeClick }) => {
   const [activeSection, setActiveSection] = useState('hero');
 
   useEffect(() => {
@@ -46,9 +46,9 @@ const Navigation = () => {
         {content.navigation.map((item) => (
           <li key={item.id} className={activeSection === item.id ? 'active' : ''}>
             {item.type === 'download' ? (
-              <a href={item.url} download className="download-link">
+              <button className="download-link" onClick={onResumeClick}>
                 {item.label}
-              </a>
+              </button>
             ) : (
               <a href={`#${item.id}`}>{item.label}</a>
             )}

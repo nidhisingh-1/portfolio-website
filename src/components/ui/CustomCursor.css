@@ -35,6 +35,49 @@
   transform: translate(-50%, -50%) scale(1.5);
 }
 
+/* View state – on project images */
+.custom-cursor.cursor-view {
+  width: 80px;
+  height: 80px;
+  border-width: 1.5px;
+  opacity: 0;
+}
+
+.custom-cursor-dot.cursor-view {
+  opacity: 0;
+}
+
+/* View label */
+.custom-cursor-label {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 10001;
+  transform: translate(-50%, -50%);
+  font-size: 0.72rem;
+  font-weight: 600;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--bg-primary);
+  background: var(--text-primary);
+  padding: 0.5rem 1rem;
+  border-radius: 100px;
+  opacity: 0;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+}
+
+.custom-cursor-label.cursor-label-visible {
+  opacity: 1;
+}
+
+[data-theme="dark"] .custom-cursor-label {
+  color: #000000;
+  background: #FFFFFF;
+}
+
 /* Invert state for dark backgrounds */
 .custom-cursor.cursor-invert {
   border-color: var(--bg-primary);

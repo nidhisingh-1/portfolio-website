@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import './Contact.css';
-import { content } from '../content';
+import { content } from '../../content';
 
 const Contact = () => {
   const { contact } = content;

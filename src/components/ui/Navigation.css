@@ -52,13 +52,26 @@
 }
 
 .side-menu li:hover a,
-.side-menu li.active a {
+.side-menu li.active a,
+.side-menu li:hover .download-link,
+.side-menu li.active .download-link {
   color: var(--text-primary);
   transform: translateX(8px);
 }
 
 .download-link {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 400;
   cursor: pointer;
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+  display: block;
+  text-align: left;
+  transform: translateX(0);
 }
 
 @media (max-width: 1400px) {

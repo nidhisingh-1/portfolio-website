@@ -1,11 +1,13 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import './Projects.css';
-import { content } from '../content';
+import { content } from '../../content';
 
 const Projects = () => {
   const { projects } = content;
-  
+  const navigate = useNavigate();
+
   const cardVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: (i) => ({
@@ -22,7 +24,7 @@ const Projects = () => {
   return (
     <section id="work">
       <div className="container">
-        <motion.div 
+        <motion.div
           className="section-header"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -31,7 +33,7 @@ const Projects = () => {
         >
           <h2 className="section-title">{projects.sectionTitle}</h2>
         </motion.div>
-        
+
         <div className="projects-grid">
           {projects.items.map((project, index) => (
             <motion.article
@@ -42,6 +44,7 @@ const Projects = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
+              onClick={() => navigate(`/work/${project.slug}`)}
             >
               {project.image && (
                 <div className="project-image">

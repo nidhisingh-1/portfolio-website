@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import './Experience.css';
-import { content } from '../content';
+import { content } from '../../content';
 
 const Experience = () => {
   const { experience } = content;

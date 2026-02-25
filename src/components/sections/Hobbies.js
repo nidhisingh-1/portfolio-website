@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import './Hobbies.css';
-import { content } from '../content';
+import { content } from '../../content';
 
 const Hobbies = () => {
   const { hobbies } = content;

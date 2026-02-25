@@ -157,6 +157,32 @@
     color: #00FF9F;
   }
 
+  /* Resume button — same look as nav links */
+  .mobile-resume-btn {
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    font-family: inherit;
+    display: block;
+    padding: 0.5rem 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+    width: 100%;
+  }
+
+  .mobile-resume-btn:hover {
+    color: #0066FF;
+    transform: translateX(8px);
+  }
+
+  [data-theme="dark"] .mobile-resume-btn:hover {
+    color: #00FF9F;
+  }
+
   /* Adjust main content padding for sticky header */
   body {
     padding-top: 0;

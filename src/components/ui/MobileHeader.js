@@ -3,7 +3,7 @@ import './MobileHeader.css';
 import ThemeToggle from './ThemeToggle';
 import ContrastToggle from './ContrastToggle';
 
-const MobileHeader = ({ navigationItems }) => {
+const MobileHeader = ({ navigationItems, onResumeClick }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -53,9 +53,12 @@ const MobileHeader = ({ navigationItems }) => {
             {navigationItems.map((item) => (
               <li key={item.id}>
                 {item.type === 'download' ? (
-                  <a href={item.url} download onClick={closeMenu}>
+                  <button
+                    className="mobile-resume-btn"
+                    onClick={() => { closeMenu(); onResumeClick(); }}
+                  >
                     {item.label}
-                  </a>
+                  </button>
                 ) : (
                   <a href={`#${item.id}`} onClick={closeMenu}>
                     {item.label}
