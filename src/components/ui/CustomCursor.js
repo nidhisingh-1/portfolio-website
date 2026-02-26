@@ -39,15 +39,9 @@ const CustomCursor = () => {
       });
 
       const target = e.target;
-      const isProjectImage = target.closest('.project-image');
       const isInteractive = target.closest('a, button, .project-card, input, textarea, [role="button"]');
 
-      if (isProjectImage) {
-        cursor.classList.add('cursor-view');
-        cursor.classList.remove('cursor-hover');
-        cursorDot.classList.add('cursor-view');
-        cursorLabel.classList.add('cursor-label-visible');
-      } else if (isInteractive) {
+      if (isInteractive) {
         cursor.classList.add('cursor-hover');
         cursor.classList.remove('cursor-view');
         cursorDot.classList.remove('cursor-view');
