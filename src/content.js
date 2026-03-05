@@ -34,100 +34,45 @@ export const content = {
     sectionTitle: 'Selected Work',
     items: [
       {
-        id: 1,
-        slug: 'vini-conversational-platform',
-        image: '/images/project-placeholder.jpg',
-        tags: ['Conversational AI', 'Product Design', '0→1 Launch'],
-        title: 'Vini - AI-Powered Conversational Platform',
-        description: 'Led end-to-end UX for Spyne\'s Conversational AI platform from scratch. Designed onboarding, agent management, live chat, calls, and Smart View features for direct customer-dealer engagement.',
-        impact: 'Impact: Launched complete conversational AI platform from 0→1',
-        overview: 'Vini is Spyne\'s flagship conversational AI product built to enable direct engagement between car dealers and their customers. I owned the full design from zero — from early concept sprints through to shipped features.',
-        role: 'Lead Product Designer',
-        duration: 'June 2024 – Present',
-        highlights: [
-          'Designed the full onboarding flow for dealers and their agents from scratch',
-          'Created the agent management dashboard including live chat and call monitoring',
-          'Built the "Smart View" feature that surfaces AI-driven conversation insights',
-          'Ran usability testing across 3 rounds to refine information hierarchy',
-          'Collaborated closely with engineers to ensure pixel-perfect handoffs'
-        ]
-      },
-      {
-        id: 2,
-        slug: 'inventory-management-system',
+        id: 6,
+        slug: 'instant-media',
         image: '/images/project-placeholder2.jpg',
-        tags: ['Enterprise UX', 'AI Integration', 'Information Architecture'],
-        title: 'AI-Powered Inventory Management System',
-        description: 'Designed Spyne\'s inventory management system for used car dealers. Covered vehicle onboarding, pricing prediction, invoicing, publishing, and sales management. Simplified complex workflows while maintaining data density.',
-        impact: 'Impact: Streamlined dealer operations, reducing manual work significantly',
-        overview: 'A complex enterprise product for used car dealers to manage their entire inventory lifecycle — from vehicle intake to sale. The challenge was reducing manual effort while keeping all the data density dealers rely on.',
+        tags: ['Automotive SaaS', 'Product Strategy', 'Velocity Feature'],
+        title: 'Instant Media – Reducing Time-to-Live in Automotive Retail',
+        description: 'Designed a zero-friction media publishing feature enabling dealers to list vehicles same-day using matched OEM or rooftop catalog images — eliminating the 2–5 day offline window between acquisition and listing.',
+        impact: 'Impact: Reduced time-to-live by up to 80%, enabling same-day listing from day of vehicle acquisition',
+        overview: 'A velocity feature disguised as a media tool. Instant Media solves the most overlooked operational bottleneck in automotive retail: the gap between vehicle acquisition and when a listing goes live online.',
+        role: 'Senior Product Designer',
+        duration: 'Spyne AI · 2024–2025',
+        highlights: [
+          'Identified time-to-live as a core operational KPI through dealer interviews and workflow observation',
+          'Designed VIN-based and YMMT-based media matching flows for both new and used inventory',
+          'Introduced confidence scoring and transparency badges to maintain consumer trust for used vehicles',
+          'Defined MVP scope to prioritise velocity validation over feature completeness',
+          'Rejected 3 design iterations before landing on the auto-match with transparent labelling approach'
+        ]
+      },
+      {
+        id: 7,
+        slug: 'inventory-listing-vdp',
+        image: '/images/inv-listing-after.png',
+        tags: ['Inventory Intelligence', 'Enterprise UX', 'Metrics Design', 'VDP'],
+        title: 'Inventory Listing & VDP — Turning a Media Tool into an Intelligence Dashboard',
+        description: 'Transformed Spyne\'s card-grid inventory view into an action-item dashboard. Surfaced "not ready to sell" counts by reason, Website Listing Score with percentile benchmarking, Time to Market per publishing platform, and a VDP with Actions Required + Publishing Status always visible.',
+        impact: 'Impact: Time to market made visible for first time; 6 named action categories replace a generic "not ready" signal',
+        overview: 'The original inventory view showed media processing status. It couldn\'t answer: why are 178 vehicles not ready? How does our listing quality compare? How long does it take to go live? The redesign turned five invisibilities — image quality, set completeness, hero consistency, website readiness, and time to market — into actionable data.',
         role: 'Product Designer',
-        duration: 'June 2024 – Present',
+        duration: 'Spyne AI · 2024–2025',
         highlights: [
-          'Mapped end-to-end dealer workflows through contextual inquiry sessions',
-          'Designed AI-assisted pricing prediction UI with confidence indicators',
-          'Simplified multi-step vehicle onboarding to a single linear flow',
-          'Created invoicing and publishing modules with consistent interaction patterns',
-          'Built scalable design system components reused across 6+ screens'
+          'Defined five inventory intelligence objectives from dealer research and CS escalation data',
+          'Designed "not ready to sell" header with named action categories and vehicle counts',
+          'Built Website Listing Score with Poor/Good/Excellent tiers and 6-week hover trend',
+          'Created Time to Market metric with per-platform breakdown and date range selector',
+          'Redesigned VDP with persistent Actions Required panel and per-platform Publishing Status',
+          'Added IMS sync source visibility and Active/Sold split with All/New/Pre-owned tabs'
         ]
       },
-      {
-        id: 3,
-        slug: 'virtual-studio-platform',
-        image: '/images/project-placeholder.jpg',
-        tags: ['Design Systems', 'Workflow Optimization', 'Media Generation'],
-        title: 'Virtual Studio Platform Unification',
-        description: 'Unified multiple media generation pipelines (images, 360° spins, video tours) into a single Virtual Studio platform. Created cohesive experience across different media types.',
-        impact: 'Impact: Reduced workflow complexity and improved efficiency',
-        overview: 'Spyne\'s Virtual Studio had grown into separate, disconnected tools for different media types. I led the unification effort to bring images, 360° spins, and video tours into a single coherent platform.',
-        role: 'Product Designer',
-        duration: 'Oct 2024 – Feb 2025',
-        highlights: [
-          'Audited all existing pipelines and identified overlapping interaction patterns',
-          'Created a shared component library spanning all media types',
-          'Designed a unified job queue and status system for all media generation tasks',
-          'Reduced the number of distinct UI states by 40% through consolidation',
-          'Worked with PMs to define a phased rollout strategy to minimise disruption'
-        ]
-      },
-      {
-        id: 4,
-        slug: 'intervue-platform-redesign',
-        image: '/images/project-placeholder2.jpg',
-        tags: ['Platform Revamp', 'Branding', 'Design Leadership'],
-        title: 'Intervue.io Complete Platform Redesign',
-        description: 'Led complete design revamp and branding as sole designer. Redesigned landing pages, dashboards, interviewer flows, and built scalable UI systems for question banks and assignments.',
-        impact: 'Impact: Improved conversion rates and student engagement',
-        overview: 'As the sole designer at Intervue.io, I took ownership of the entire product and brand — from the public marketing site to the core interviewer and candidate flows.',
-        role: 'UI/UX Designer (Sole Designer)',
-        duration: 'Jan 2023 – May 2024',
-        highlights: [
-          'Rebuilt the brand identity including logo, colour system, and typography',
-          'Redesigned the candidate dashboard reducing time-to-first-action by 35%',
-          'Created a scalable question bank UI supporting 10,000+ questions',
-          'Designed interview scheduling and feedback flows used daily by interviewers',
-          'Established and maintained a Figma component library from scratch'
-        ]
-      },
-      {
-        id: 5,
-        slug: 'talkout-voice-conversations',
-        image: '/images/project-placeholder.jpg',
-        tags: ['User Research', 'Prototyping', 'User Testing'],
-        title: 'Talkout - Real-Time Voice Conversations (Coto)',
-        description: 'Designed and tested voice conversation features and swipe-based content flows. Conducted user research and iterative testing to improve retention and in-app activity.',
-        impact: 'Impact: Improved user retention through engaging voice features',
-        overview: 'Talkout was a real-time voice feature within the Coto social platform. My role was to research, prototype, and test interaction patterns that would drive daily active usage among Coto\'s creator communities.',
-        role: 'Product Design Researcher (Intern)',
-        duration: 'Oct 2022 – Dec 2022',
-        highlights: [
-          'Conducted 12 user interviews to understand voice interaction habits',
-          'Built interactive prototypes for 3 different entry-point flows',
-          'Designed a swipe-based content discovery feed for voice rooms',
-          'Ran 2 rounds of usability testing and synthesised findings into actionable insights',
-          'Collaborated with senior designers to incorporate findings into the final design'
-        ]
-      }
+      
     ]
   },
 

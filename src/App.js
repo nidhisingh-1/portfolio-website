@@ -18,6 +18,8 @@ import Experience from './components/sections/Experience';
 import Hobbies from './components/sections/Hobbies';
 import Contact from './components/sections/Contact';
 import ProjectDetail from './components/sections/ProjectDetail';
+import InstantMediaDetail from './components/sections/InstantMediaDetail';
+import InventoryListingDetail from './components/sections/InventoryListingDetail';
 
 import { content } from './content';
 
@@ -47,6 +49,24 @@ const ProjectDetailPage = () => (
   </div>
 );
 
+const InstantMediaDetailPage = () => (
+  <div className="App">
+    <CustomCursor />
+    <ThemeToggle />
+    <ContrastToggle />
+    <InstantMediaDetail />
+  </div>
+);
+
+const InventoryListingDetailPage = () => (
+  <div className="App">
+    <CustomCursor />
+    <ThemeToggle />
+    <ContrastToggle />
+    <InventoryListingDetail />
+  </div>
+);
+
 function App() {
   const [resumeOpen, setResumeOpen] = useState(false);
 
@@ -55,6 +75,8 @@ function App() {
       <ThemeProvider>
         <Routes>
           <Route path="/" element={<HomePage onResumeClick={() => setResumeOpen(true)} />} />
+          <Route path="/work/instant-media" element={<InstantMediaDetailPage />} />
+          <Route path="/work/inventory-listing-vdp" element={<InventoryListingDetailPage />} />
           <Route path="/work/:slug" element={<ProjectDetailPage />} />
         </Routes>
         <ResumeModal isOpen={resumeOpen} onClose={() => setResumeOpen(false)} />

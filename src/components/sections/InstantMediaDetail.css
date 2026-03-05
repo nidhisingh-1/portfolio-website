@@ -1,0 +1,713 @@
+/* ── Instant Media Case Study ────────────────────────────────────────────────
+   Visual language: sticky notes · pipeline flows · Medium pull quotes.
+   Extends ProjectDetail.css.
+──────────────────────────────────────────────────────────────────────────── */
+
+/* ── Accent tokens ─────────────────────────────────────────────────────────── */
+:root {
+  --im-blue:     #1D4ED8;
+  --im-blue-bg:  #EFF6FF;
+  --im-green:    #15803D;
+  --im-green-bg: #F0FDF4;
+  --im-red:      #B91C1C;
+  --im-red-bg:   #FEF2F2;
+}
+
+[data-theme="dark"] {
+  --im-blue:     #93C5FD;
+  --im-blue-bg:  rgba(29, 78, 216, 0.12);
+  --im-green:    #86EFAC;
+  --im-green-bg: rgba(21, 128, 61, 0.12);
+  --im-red:      #FCA5A5;
+  --im-red-bg:   rgba(185, 28, 28, 0.12);
+}
+
+/* ── Wide content + extra section breathing room ───────────────────────────── */
+.im-section-wide {
+  max-width: 940px !important;
+  padding-top: 2.75rem !important;
+  padding-bottom: 3.5rem !important;
+}
+
+/* ── Section label ─────────────────────────────────────────────────────────── */
+.im-chip {
+  display: block;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  color: var(--im-blue);
+  margin-bottom: 0.75rem;
+}
+
+/* ── Section headings ──────────────────────────────────────────────────────── */
+.im-section-wide .pd-section-title {
+  font-size: clamp(1.5rem, 3vw, 2rem) !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.025em;
+  margin-bottom: 1.35rem !important;
+  line-height: 1.25;
+}
+
+/* ── Body text ─────────────────────────────────────────────────────────────── */
+.im-section-wide .pd-body {
+  font-size: 0.95rem;
+  line-height: 1.85;
+  margin-bottom: 0.9rem;
+  max-width: 680px;
+}
+
+.im-section-wide .pd-body strong {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* ── Pull quote ────────────────────────────────────────────────────────────── */
+.im-pull-quote {
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text-primary);
+  border-left: 2px solid var(--text-muted);
+  padding: 0.9rem 1.5rem;
+  margin: 2.5rem 0;
+  line-height: 1.75;
+  max-width: 680px;
+}
+
+/* ── Insight cards (replacing sticky notes) ────────────────────────────────── */
+.im-stickies {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 2.25rem 0;
+}
+
+.im-sticky {
+  padding: 1.1rem 1.25rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--border);
+  box-shadow: none;
+}
+
+.im-sticky p {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+}
+
+.im-sticky .im-sticky-label {
+  font-size: 0.58rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.im-sticky--yellow { border-left-color: #D97706; }
+.im-sticky--blue   { border-left-color: var(--im-blue); }
+.im-sticky--pink   { border-left-color: #BE185D; }
+.im-sticky--green  { border-left-color: var(--im-green); }
+.im-sticky--peach  { border-left-color: var(--im-red); }
+
+/* ── Bottleneck flow ───────────────────────────────────────────────────────── */
+.im-bottleneck-flow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  row-gap: 10px;
+  margin: 2.25rem 0 0.5rem;
+}
+
+.im-bf-step {
+  padding: 0.5rem 1.1rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid var(--border);
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.im-bf-step--delay {
+  border-color: var(--im-red);
+  background: var(--im-red-bg);
+  color: var(--im-red);
+  font-weight: 600;
+}
+
+.im-bf-step--end {
+  border-color: var(--border);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.im-bf-arrow {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.im-bf-caption {
+  width: 100%;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin: 0.75rem 0 0;
+  font-style: italic;
+  line-height: 1.55;
+}
+
+/* ── Before / after rows ───────────────────────────────────────────────────── */
+.im-ba-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 2.25rem 0;
+}
+
+.im-ba-row {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+  padding: 1rem 0 1rem 1.1rem;
+  border-top: 1px solid var(--border);
+  background: none;
+}
+
+.im-ba-row:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+.im-ba-row.before { border-left: 2px solid var(--text-muted); }
+.im-ba-row.after  { border-left: 2px solid var(--text-primary); }
+
+.im-ba-tag {
+  font-size: 0.58rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  flex-shrink: 0;
+  min-width: 40px;
+}
+
+.before .im-ba-tag { color: var(--text-muted);   }
+.after  .im-ba-tag { color: var(--text-primary); }
+
+.im-ba-text {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+}
+
+/* ── Pipeline flow — horizontal, minimal ───────────────────────────────────── */
+.im-pipeline-wrap {
+  margin: 1.25rem 0 0.5rem;
+}
+
+.im-pipeline-label {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-bottom: 0.7rem;
+}
+
+.im-pipeline {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  row-gap: 10px;
+}
+
+.im-pipe-item {
+  padding: 0.45rem 1rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg-secondary);
+  display: flex;
+  align-items: center;
+}
+
+.im-pipe-dot {
+  display: none;
+}
+
+.im-pipe-step-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.im-pipe-step-label--default,
+.im-pipe-step-label--blue,
+.im-pipe-step-label--green,
+.im-pipe-step-label--red { color: var(--text-secondary); }
+
+.im-pipe-arrow {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+/* ── Flows stack ───────────────────────────────────────────────────────────── */
+.im-flows-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 0 0 2rem;
+  padding-top: 1.5rem;
+}
+
+.im-flow-card {
+  padding: 1.1rem 1.35rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-secondary);
+}
+
+.im-flow-card-label {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
+/* ── New vs Used ───────────────────────────────────────────────────────────── */
+.im-nvu-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin: 2rem 0;
+}
+
+.im-nvu-card {
+  padding: 1.25rem 1.35rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-secondary);
+}
+
+.im-nvu-title {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.im-nvu-title.new  { color: var(--text-primary); }
+.im-nvu-title.used { color: var(--text-primary); }
+
+.im-nvu-note {
+  font-size: 0.825rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 1.1rem;
+}
+
+/* ── Decisions list ────────────────────────────────────────────────────────── */
+.im-decisions {
+  margin: 1.5rem 0;
+}
+
+.im-decision {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-top: 1px solid var(--border);
+  background: none;
+}
+
+.im-decision:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+.im-decision.final {
+  padding-left: 0.85rem;
+  border-left: 2px solid var(--im-green);
+  margin-left: -0.85rem;
+}
+
+.im-decision-badge {
+  font-size: 0.58rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  flex-shrink: 0;
+  min-width: 52px;
+  padding-top: 2px;
+}
+
+.im-decision-badge.no  { color: var(--text-muted); }
+.im-decision-badge.yes { color: var(--im-green); }
+
+.im-decision-body { flex: 1; }
+
+.im-decision-title {
+  font-size: 0.925rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 0.3rem;
+}
+
+.im-decision.final .im-decision-title {
+  color: var(--im-green);
+  font-weight: 600;
+}
+
+.im-decision-desc {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.im-decision.final .im-decision-desc {
+  color: var(--text-secondary);
+}
+
+/* ── Material Symbols icon utility ────────────────────────────────────────── */
+.im-icon {
+  font-family: 'Material Symbols Rounded';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.1rem;
+  line-height: 1;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 4px;
+  position: relative;
+  top: -1px;
+}
+
+/* ── Metrics row ───────────────────────────────────────────────────────────── */
+.im-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin: 2.5rem 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.im-metric {
+  padding: 1.75rem 1.25rem;
+  border-right: 1px solid var(--border);
+  background: none;
+  text-align: left;
+}
+
+.im-metric:last-child {
+  border-right: none;
+}
+
+.im-metric-val {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.im-metric-lbl {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+/* ── Mockup placeholders ───────────────────────────────────────────────────── */
+.im-mockup-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 2rem 0;
+}
+
+.im-mockup {
+  display: flex;
+  align-items: baseline;
+  gap: 1.25rem;
+  padding: 0.9rem 0 0.9rem 1rem;
+  border-top: 1px solid var(--border);
+  background: none;
+  border-left: 2px solid transparent;
+  transition: border-left-color 0.2s ease;
+}
+
+.im-mockup:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+.im-mockup:hover {
+  border-left-color: var(--im-blue);
+}
+
+.im-mockup-icon {
+  font-size: 0.75rem;
+  opacity: 0.35;
+  flex-shrink: 0;
+  line-height: 1.7;
+}
+
+.im-mockup p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.6;
+  font-style: normal;
+}
+
+/* ── MVP note ──────────────────────────────────────────────────────────────── */
+.im-mvp-note {
+  border: 1px solid var(--border);
+  border-left: 2px solid var(--text-primary);
+  border-radius: 0 6px 6px 0;
+  padding: 1rem 1.25rem;
+  margin: 1.75rem 0 2rem;
+  background: var(--bg-secondary);
+}
+
+.im-mvp-note-label {
+  display: inline-block;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  color: var(--text-secondary);
+  margin-bottom: 0.45rem;
+}
+
+.im-mvp-note p {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ── Future prospects ──────────────────────────────────────────────────────── */
+.im-future-heading {
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  font-weight: 500;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  margin: 2.5rem 0 1.25rem;
+}
+
+.im-future-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.im-future-item {
+  display: flex;
+  align-items: baseline;
+  gap: 1.1rem;
+  padding: 0.9rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.im-future-item:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+.im-future-num {
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  flex-shrink: 0;
+  min-width: 22px;
+}
+
+.im-future-title {
+  font-size: 0.925rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.3rem;
+}
+
+.im-future-desc {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ── Reflection stat row ───────────────────────────────────────────────────── */
+.im-stat-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin: 2.5rem 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.im-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.75rem 1.25rem;
+  border-right: 1px solid var(--border);
+}
+
+.im-stat:last-child {
+  border-right: none;
+}
+
+.im-stat-val {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.im-stat-lbl {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+
+/* ── Screenshot — generic ───────────────────────────────────────────────────── */
+.im-screenshot {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="dark"] .im-screenshot {
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+}
+
+.im-screenshot-caption {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.65rem;
+  line-height: 1.55;
+  text-align: left;
+}
+
+/* ── Before / After screenshot pair ────────────────────────────────────────── */
+.im-ba-screenshots {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin: 2.5rem 0;
+}
+
+.im-ba-screen-tag {
+  display: block;
+  font-size: 0.62rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.65rem;
+}
+
+.im-ba-screen-tag.before { color: var(--text-muted); }
+.im-ba-screen-tag.after  { color: var(--text-primary); }
+
+.im-ba-screen .im-screenshot-caption {
+  text-align: left;
+}
+
+/* ── Flow screenshot strip ──────────────────────────────────────────────────── */
+.im-flow-screenshots {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin: 2.5rem 0;
+}
+
+.im-flow-screen-step {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  margin-bottom: 0.65rem;
+}
+
+.im-flow-screen .im-screenshot-caption {
+  text-align: left;
+}
+
+/* ── Screens grid (replaces text mockup grid) ───────────────────────────────── */
+.im-screens-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin: 2rem 0;
+}
+
+.im-screen-num {
+  display: block;
+  font-size: 0.62rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin-bottom: 0.65rem;
+}
+
+.im-screens-grid .im-screenshot-caption {
+  text-align: left;
+}
+
+/* ── Sub-section label ─────────────────────────────────────────────────────── */
+.im-sub-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin: 2.75rem 0 0;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Responsive ────────────────────────────────────────────────────────────── */
+@media (max-width: 960px) {
+  .im-stickies         { grid-template-columns: 1fr 1fr; }
+  .im-section-wide     { max-width: 100% !important; }
+}
+
+@media (max-width: 860px) {
+  .im-metrics          { grid-template-columns: 1fr 1fr; }
+  .im-stat-row         { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 640px) {
+  .im-stat-row         { grid-template-columns: 1fr; }
+  .im-stat             { border-right: none; border-bottom: 1px solid var(--border); }
+  .im-stat:last-child  { border-bottom: none; }
+}
+
+@media (max-width: 580px) {
+  .im-stickies         { grid-template-columns: 1fr; }
+  .im-metrics          { grid-template-columns: 1fr 1fr; }
+}
