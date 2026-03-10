@@ -293,7 +293,7 @@ const SpyneFlipDetail = () => {
                 <span className="im-flow-screen-step">Step 2 — Detect vehicles on the page</span>
                 <img
                   src="/images/sf-detect.png"
-                  alt="Dealer website with 8 vehicle image containers highlighted in pink borders. Extension panel shows 8 Vehicle Found."
+                  alt="Dealer website with 8 vehicle containers highlighted in pink borders. Extension panel shows 8 Vehicle Found."
                   className="im-screenshot"
                 />
                 <p className="im-screenshot-caption">The extension scans the DOM and highlights every vehicle image container. "8 Vehicle Found" confirms detection before anything is changed.</p>
@@ -412,7 +412,7 @@ const SpyneFlipDetail = () => {
                 <span className="im-ba-screen-tag before">Before</span>
                 <img
                   src="/images/sf-score-before.png"
-                  alt="Dealer website with original lot photos and showroom images. Extension panel shows website score 7.6 Needs Improvement."
+                  alt="Dealer website with original lot photos and showroom visuals. Extension panel shows website score 7.6 Needs Improvement."
                   className="im-screenshot"
                 />
                 <p className="im-screenshot-caption">Original dealer site: parking lot and showroom photos, inconsistent angles, website score 7.6. Every prospect sees this version without Spyne.</p>

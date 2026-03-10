@@ -284,7 +284,7 @@ const InstantMediaDetail = () => {
               </div>
               <div className="im-ba-screen">
                 <span className="im-ba-screen-tag after">After</span>
-                <img loading="lazy" src="/images/im-trigger.png" alt="Instant Media trigger Go live instantly banner with matched stock images" className="im-screenshot" />
+                <img loading="lazy" src="/images/im-trigger.png" alt="Instant Media trigger Go live instantly banner with matched stock photos" className="im-screenshot" />
                 <p className="im-screenshot-caption">Instant Media surfaces in context "Go live instantly with your media library" with matched vehicles ready to use.</p>
               </div>
             </div>
@@ -373,12 +373,12 @@ const InstantMediaDetail = () => {
             <div className="im-flow-screenshots">
               <div className="im-flow-screen">
                 <span className="im-flow-screen-step">Step 1 YMMT Input</span>
-                <img loading="lazy" src="/images/im-ymmt-input.png" alt="YMMT input form enter Year, Make, Model, Trim to find matching stock images" className="im-screenshot" />
+                <img loading="lazy" src="/images/im-ymmt-input.png" alt="YMMT input form enter Year, Make, Model, Trim to find matching stock photos" className="im-screenshot" />
                 <p className="im-screenshot-caption">Year, Make, Model, Trim input with Find Matches</p>
               </div>
               <div className="im-flow-screen">
                 <span className="im-flow-screen-step">Step 2 Finding Matches</span>
-                <img loading="lazy" src="/images/im-finding-match.png" alt="Loading state finding best matching vehicle images from library" className="im-screenshot" />
+                <img loading="lazy" src="/images/im-finding-match.png" alt="Loading state finding best matching vehicle photos from library" className="im-screenshot" />
                 <p className="im-screenshot-caption">Matching against Rooftop Library or OEM catalog</p>
               </div>
               <div className="im-flow-screen">
@@ -388,7 +388,7 @@ const InstantMediaDetail = () => {
               </div>
               <div className="im-flow-screen">
                 <span className="im-flow-screen-step">Step 4 Live</span>
-                <img loading="lazy" src="/images/im-live-listing.png" alt="Live listing with representative images and Not an Actual Vehicle transparency badge" className="im-screenshot" />
+                <img loading="lazy" src="/images/im-live-listing.png" alt="Live listing with representative photos and Not an Actual Vehicle transparency badge" className="im-screenshot" />
                 <p className="im-screenshot-caption">Listing live with transparency badge on every image</p>
               </div>
             </div>
