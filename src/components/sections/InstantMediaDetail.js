@@ -3,6 +3,21 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import './ProjectDetail.css';
 import './InstantMediaDetail.css';
+import DesignGallery from '../ui/DesignGallery';
+
+const IM_IMAGES = [
+  { src: '/images/im-upload-empty.png',  caption: 'Before — Empty upload screen, no media means no listing' },
+  { src: '/images/im-trigger.png',       caption: 'Instant Media trigger — Go live instantly with your media library' },
+  { src: '/images/im-ymmt-input.png',    caption: 'Step 1 — YMMT input: Year, Make, Model, Trim to find matching stock images' },
+  { src: '/images/im-finding-match.png', caption: 'Step 2 — Matching against Rooftop Library or OEM catalog' },
+  { src: '/images/im-match-results.png', caption: 'Step 3 — Confidence-scored results with Best Match highlight' },
+  { src: '/images/im-live-listing.png',  caption: 'Step 4 — Listing live with transparency badge on every image' },
+  { src: '/images/im-iter-1.png',        caption: 'Iteration 1 — Explicit CTA entry point (rejected)' },
+  { src: '/images/im-iter-2.png',        caption: 'Iteration 2 — Stock library with variant details (rejected)' },
+  { src: '/images/im-iter-3.png',        caption: 'Iteration 3 — Side panel, grid layout (rejected)' },
+  { src: '/images/im-iter-4.png',        caption: 'Iteration 4 — Side panel, list layout (rejected)' },
+  { src: '/images/im-iter-5.png',        caption: 'Iteration 5 — Inline full-width panel (foundation for shipped design)' },
+];
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 20 },
@@ -91,22 +106,58 @@ const InstantMediaDetail = () => {
             </p>
           </motion.div>
 
-          <motion.div className="pd-meta"
-            initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.12, ease: [0.25, 0.1, 0.25, 1] }}>
-            <div className="pd-meta-item">
-              <span className="pd-meta-label">Company</span>
-              <span className="pd-meta-value">Spyne AI</span>
-            </div>
-            <div className="pd-meta-item">
-              <span className="pd-meta-label">Product</span>
-              <span className="pd-meta-value">Instant Media</span>
-            </div>
-            <div className="pd-meta-item">
-              <span className="pd-meta-label">Timeline</span>
-              <span className="pd-meta-value">2024–2025</span>
-            </div>
-          </motion.div>
+          <DesignGallery images={IM_IMAGES} title="Instant Media — Design Screens">
+            {({ open, openAt }) => (
+              <>
+                <motion.div className="pd-meta"
+                  initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.12, ease: [0.25, 0.1, 0.25, 1] }}>
+                  <div className="pd-meta-item">
+                    <span className="pd-meta-label">Company</span>
+                    <span className="pd-meta-value">Spyne AI</span>
+                  </div>
+                  <div className="pd-meta-item">
+                    <span className="pd-meta-label">Product</span>
+                    <span className="pd-meta-value">Instant Media</span>
+                  </div>
+                  <div className="pd-meta-item">
+                    <span className="pd-meta-label">Timeline</span>
+                    <span className="pd-meta-value">2024–2025</span>
+                  </div>
+                  <div className="pd-meta-item">
+                    <span className="pd-meta-label">Designs</span>
+                    <button className="sf-store-link sf-gallery-btn" onClick={open}>
+                      View all screens ↗
+                    </button>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  className="pd-preview-strip"
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
+                >
+                  <div className="pd-preview-images">
+                    {[1, 2, 4, 5].map((imgIdx, i) => (
+                      <img
+                        key={i}
+                        loading="lazy"
+                        src={IM_IMAGES[imgIdx].src}
+                        alt={IM_IMAGES[imgIdx].caption}
+                        className="pd-preview-img"
+                        onClick={() => openAt(imgIdx)}
+                      />
+                    ))}
+                  </div>
+                  <div className="pd-preview-footer">
+                    <a href="#design-walkthrough" className="pd-preview-note">Full design walkthrough further below ↓</a>
+                    <button className="pd-preview-cta" onClick={open}>View all 11 screens ↗</button>
+                  </div>
+                </motion.div>
+              </>
+            )}
+          </DesignGallery>
         </div>
 
       </section>
@@ -228,12 +279,12 @@ const InstantMediaDetail = () => {
             <div className="im-ba-screenshots">
               <div className="im-ba-screen">
                 <span className="im-ba-screen-tag before">Before</span>
-                <img src="/images/im-upload-empty.png" alt="Empty media upload screen listing blocked, waiting for photos" className="im-screenshot" />
+                <img loading="lazy" src="/images/im-upload-empty.png" alt="Empty media upload screen listing blocked, waiting for photos" className="im-screenshot" />
                 <p className="im-screenshot-caption">Upload screen sits empty. No media = no listing. Dealer waits for the photoshoot.</p>
               </div>
               <div className="im-ba-screen">
                 <span className="im-ba-screen-tag after">After</span>
-                <img src="/images/im-trigger.png" alt="Instant Media trigger Go live instantly banner with matched stock images" className="im-screenshot" />
+                <img loading="lazy" src="/images/im-trigger.png" alt="Instant Media trigger Go live instantly banner with matched stock images" className="im-screenshot" />
                 <p className="im-screenshot-caption">Instant Media surfaces in context "Go live instantly with your media library" with matched vehicles ready to use.</p>
               </div>
             </div>
@@ -322,22 +373,22 @@ const InstantMediaDetail = () => {
             <div className="im-flow-screenshots">
               <div className="im-flow-screen">
                 <span className="im-flow-screen-step">Step 1 YMMT Input</span>
-                <img src="/images/im-ymmt-input.png" alt="YMMT input form enter Year, Make, Model, Trim to find matching stock images" className="im-screenshot" />
+                <img loading="lazy" src="/images/im-ymmt-input.png" alt="YMMT input form enter Year, Make, Model, Trim to find matching stock images" className="im-screenshot" />
                 <p className="im-screenshot-caption">Year, Make, Model, Trim input with Find Matches</p>
               </div>
               <div className="im-flow-screen">
                 <span className="im-flow-screen-step">Step 2 Finding Matches</span>
-                <img src="/images/im-finding-match.png" alt="Loading state finding best matching vehicle images from library" className="im-screenshot" />
+                <img loading="lazy" src="/images/im-finding-match.png" alt="Loading state finding best matching vehicle images from library" className="im-screenshot" />
                 <p className="im-screenshot-caption">Matching against Rooftop Library or OEM catalog</p>
               </div>
               <div className="im-flow-screen">
                 <span className="im-flow-screen-step">Step 3 Select Match</span>
-                <img src="/images/im-match-results.png" alt="Match results grid showing Best Match badge and Use Media buttons" className="im-screenshot" />
+                <img loading="lazy" src="/images/im-match-results.png" alt="Match results grid showing Best Match badge and Use Media buttons" className="im-screenshot" />
                 <p className="im-screenshot-caption">Confidence-scored results with Best Match highlight</p>
               </div>
               <div className="im-flow-screen">
                 <span className="im-flow-screen-step">Step 4 Live</span>
-                <img src="/images/im-live-listing.png" alt="Live listing with representative images and Not an Actual Vehicle transparency badge" className="im-screenshot" />
+                <img loading="lazy" src="/images/im-live-listing.png" alt="Live listing with representative images and Not an Actual Vehicle transparency badge" className="im-screenshot" />
                 <p className="im-screenshot-caption">Listing live with transparency badge on every image</p>
               </div>
             </div>
@@ -348,7 +399,7 @@ const InstantMediaDetail = () => {
       {/* ══════════════════════════════════════════════════════════════════════
           05 DESIGN ITERATIONS
       ══════════════════════════════════════════════════════════════════════ */}
-      <section className="pd-section">
+      <section id="design-walkthrough" className="pd-section">
         <div className="container">
           <motion.div className="pd-section-content im-section-wide" {...fadeUp()}>
             <span className="im-chip">05 Design Iterations</span>
@@ -365,7 +416,7 @@ const InstantMediaDetail = () => {
             <div className="im-flow-screenshots">
               <div className="im-flow-screen">
                 <span className="im-flow-screen-step">Iteration 1: Explicit CTA entry point</span>
-                <img src="/images/im-iter-1.png" alt="Early iteration Enter VIN or Enter Vehicle Details CTA at the bottom of the upload screen" className="im-screenshot" />
+                <img loading="lazy" src="/images/im-iter-1.png" alt="Early iteration Enter VIN or Enter Vehicle Details CTA at the bottom of the upload screen" className="im-screenshot" />
                 <p className="im-screenshot-caption">Dealer had to manually choose between "Enter VIN" or "Enter Vehicle Details" before seeing any matches.</p>
                 <div className="im-iter-problem">
                   <span className="im-iter-problem-label">Problem</span>
@@ -374,7 +425,7 @@ const InstantMediaDetail = () => {
               </div>
               <div className="im-flow-screen">
                 <span className="im-flow-screen-step">Iteration 2: Stock library with variant details</span>
-                <img src="/images/im-iter-2.png" alt="Iteration showing stock library import with variant cards showing color and trim information" className="im-screenshot" />
+                <img loading="lazy" src="/images/im-iter-2.png" alt="Iteration showing stock library import with variant cards showing color and trim information" className="im-screenshot" />
                 <p className="im-screenshot-caption">Surfaced matched variants with colour and trim details upfront, richer cards at the selection stage.</p>
                 <div className="im-iter-problem">
                   <span className="im-iter-problem-label">Problem</span>
@@ -383,7 +434,7 @@ const InstantMediaDetail = () => {
               </div>
               <div className="im-flow-screen">
                 <span className="im-flow-screen-step">Iteration 3: Side panel, grid layout</span>
-                <img src="/images/im-iter-3.png" alt="Split layout upload on left, Cloned Media suggestion panel on right with 2x2 grid" className="im-screenshot" />
+                <img loading="lazy" src="/images/im-iter-3.png" alt="Split layout upload on left, Cloned Media suggestion panel on right with 2x2 grid" className="im-screenshot" />
                 <p className="im-screenshot-caption">Persistent side panel kept upload and match selection visible simultaneously in a 2×2 grid.</p>
                 <div className="im-iter-problem">
                   <span className="im-iter-problem-label">Problem</span>
@@ -392,7 +443,7 @@ const InstantMediaDetail = () => {
               </div>
               <div className="im-flow-screen">
                 <span className="im-flow-screen-step">Iteration 4: Side panel, list layout</span>
-                <img src="/images/im-iter-4.png" alt="Side panel variant with list layout showing vehicle details row by row" className="im-screenshot" />
+                <img loading="lazy" src="/images/im-iter-4.png" alt="Side panel variant with list layout showing vehicle details row by row" className="im-screenshot" />
                 <p className="im-screenshot-caption">Switched the grid to a scannable list with exterior and interior colour per row.</p>
                 <div className="im-iter-problem">
                   <span className="im-iter-problem-label">Problem</span>
@@ -401,7 +452,7 @@ const InstantMediaDetail = () => {
               </div>
               <div className="im-flow-screen">
                 <span className="im-flow-screen-step">Iteration 5: Inline full-width panel</span>
-                <img src="/images/im-iter-5.png" alt="Full-width inline panel below upload area showing matched vehicle thumbnails in a row" className="im-screenshot" />
+                <img loading="lazy" src="/images/im-iter-5.png" alt="Full-width inline panel below upload area showing matched vehicle thumbnails in a row" className="im-screenshot" />
                 <p className="im-screenshot-caption">Moved matches below the upload area as a full-width inline section, no competing zones, clear sequence.</p>
                 <div className="im-iter-shipped">
                   <span className="im-iter-shipped-label">Foundation</span>

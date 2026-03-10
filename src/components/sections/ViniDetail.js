@@ -3,6 +3,43 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import './ProjectDetail.css';
 import './ViniDetail.css';
+import DesignGallery from '../ui/DesignGallery';
+
+import svIter1 from '../../assets/smartview/chatbot website/half width.png';
+import svIter2 from '../../assets/smartview/chatbot website/half width-1.png';
+import svIter3 from '../../assets/smartview/chatbot website/half width-2.png';
+import svIter4 from '../../assets/smartview/chatbot website/half width-3.png';
+import svIter5 from '../../assets/smartview/2.png';
+import svIter6 from '../../assets/smartview/4.png';
+
+import svFinal1  from '../../assets/smartview/final web/chatbot website/half width.png';
+import svFinal2  from '../../assets/smartview/final web/chatbot website/half width-1.png';
+import svFinal3  from '../../assets/smartview/final web/chatbot website/half width-2.png';
+import svFinal4  from '../../assets/smartview/final web/chatbot website/half width-3.png';
+import svFinal5  from '../../assets/smartview/final web/chatbot website/half width-4.png';
+import svFinal6  from '../../assets/smartview/final web/chatbot website/half width-5.png';
+import svFinal7  from '../../assets/smartview/final web/chatbot website/half width-6.png';
+import svFinal8  from '../../assets/smartview/final web/chatbot website/half width-7.png';
+import svFinal9  from '../../assets/smartview/final web/chatbot website/half width-8.png';
+import svFinal10 from '../../assets/smartview/final web/chatbot website/half width-9.png';
+import svFinal11 from '../../assets/smartview/final web/chatbot website/half width-10.png';
+import svFinal12 from '../../assets/smartview/final web/chatbot website/half width-11.png';
+import svFinal13 from '../../assets/smartview/final web/chatbot website/half width-12.png';
+import svFinal14 from '../../assets/smartview/final web/chatbot website/half width-13.png';
+import svFinal15 from '../../assets/smartview/final web/chatbot website/half width-14.png';
+import svFinal16 from '../../assets/smartview/final web/chatbot website/half width-15.png';
+import svFinal17 from '../../assets/smartview/final web/chatbot website/half width-16.png';
+import svFinal18 from '../../assets/smartview/final web/chatbot website/half width-17.png';
+
+import svMweb1 from '../../assets/smartview/mweb/chatbot website/Frame 1984082002.png';
+import svMweb2 from '../../assets/smartview/mweb/chatbot website/Frame 1984082003.png';
+import svMweb3 from '../../assets/smartview/mweb/chatbot website/Frame 1984082004.png';
+import svMweb4 from '../../assets/smartview/mweb/chatbot website/Frame 1984082017.png';
+import svMweb5 from '../../assets/smartview/mweb/chatbot website/Frame 1984082018.png';
+import svMweb6 from '../../assets/smartview/mweb/chatbot website/Frame 1984082020.png';
+import svMweb7 from '../../assets/smartview/mweb/chatbot website/Frame 1984082021.png';
+import svMweb8 from '../../assets/smartview/mweb/chatbot website/Frame 1984082028.png';
+import svMweb9 from '../../assets/smartview/mweb/chatbot website/Frame 1984082029.png';
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 20 },
@@ -102,22 +139,65 @@ const ViniDetail = () => {
             </p>
           </motion.div>
 
-          <motion.div className="pd-meta"
-            initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.12, ease: [0.25, 0.1, 0.25, 1] }}>
-            <div className="pd-meta-item">
-              <span className="pd-meta-label">Company</span>
-              <span className="pd-meta-value">Spyne AI</span>
-            </div>
-            <div className="pd-meta-item">
-              <span className="pd-meta-label">Product</span>
-              <span className="pd-meta-value">Vini AI</span>
-            </div>
-            <div className="pd-meta-item">
-              <span className="pd-meta-label">Timeline</span>
-              <span className="pd-meta-value">2024–2025</span>
-            </div>
-          </motion.div>
+          <DesignGallery
+            images={[
+              svFinal1, svFinal2, svFinal3, svFinal4, svFinal5, svFinal6,
+              svFinal7, svFinal8, svFinal9, svFinal10, svFinal11, svFinal12,
+              svFinal13, svFinal14, svFinal15, svFinal16, svFinal17, svFinal18,
+            ].map((src, i) => ({ src, caption: `Web screen ${i + 1}` }))}
+            title="SmartView — Final Design Screens"
+          >
+            {({ open, openAt }) => (
+              <>
+                <motion.div className="pd-meta"
+                  initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.12, ease: [0.25, 0.1, 0.25, 1] }}>
+                  <div className="pd-meta-item">
+                    <span className="pd-meta-label">Company</span>
+                    <span className="pd-meta-value">Spyne AI</span>
+                  </div>
+                  <div className="pd-meta-item">
+                    <span className="pd-meta-label">Product</span>
+                    <span className="pd-meta-value">Vini AI</span>
+                  </div>
+                  <div className="pd-meta-item">
+                    <span className="pd-meta-label">Timeline</span>
+                    <span className="pd-meta-value">2024–2025</span>
+                  </div>
+                  <div className="pd-meta-item">
+                    <span className="pd-meta-label">Designs</span>
+                    <button className="sf-store-link sf-gallery-btn" onClick={open}>
+                      View all screens ↗
+                    </button>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  className="pd-preview-strip"
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
+                >
+                  <div className="pd-preview-images">
+                    {[svFinal1, svFinal3, svFinal6, svFinal9, svFinal13].map((src, i) => (
+                      <img
+                        key={i}
+                        loading="lazy"
+                        src={src}
+                        alt={`SmartView design preview ${i + 1}`}
+                        className="pd-preview-img"
+                        onClick={() => openAt([0, 2, 5, 8, 12][i])}
+                      />
+                    ))}
+                  </div>
+                  <div className="pd-preview-footer">
+                    <a href="#design-walkthrough" className="pd-preview-note">Full design walkthrough further below ↓</a>
+                    <button className="pd-preview-cta" onClick={open}>View all 18 screens ↗</button>
+                  </div>
+                </motion.div>
+              </>
+            )}
+          </DesignGallery>
         </div>
       </section>
 
@@ -552,27 +632,162 @@ const ViniDetail = () => {
                   verdictClass: 'vn-verdict--no',
                   title: 'Generic chat bubble on the viewer',
                   desc: 'Solved iframe placement but not the deeper problem: no vehicle context, no personality, no reason to engage over the dealer\'s existing chat solution.',
+                  cons: [
+                    'No vehicle context awareness, greets with the same generic message regardless of which car the buyer is viewing',
+                    'Indistinguishable from any third-party widget the dealer already has, gives dealers no reason to switch',
+                    'No named persona or personality, nothing to differentiate it from the commodity chat solutions it was meant to replace',
+                  ],
                 },
                 {
                   verdict: 'Rejected',
                   verdictClass: 'vn-verdict--no',
                   title: 'Vehicle-aware chat panel',
                   desc: 'Surfaced vehicle details and quick-action buttons but felt like a feature panel, not a conversation. The conversational layer felt bolted on.',
+                  cons: [
+                    'Buyers had to parse a data dashboard before they could ask anything, creating cognitive overhead before the first interaction',
+                    'Two competing modes (panel browsing and typed conversation) split attention and made the primary action unclear',
+                    'The chat input felt secondary to the vehicle display, which inverted the priority of a conversational product',
+                  ],
                 },
                 {
                   verdict: 'Shipped',
                   verdictClass: 'vn-verdict--yes',
                   title: 'Vini named, character-driven assistant',
                   desc: 'A named AI persona that greets with the specific vehicle, offers contextual prompts, and maintains personality throughout. The vehicle-aware greeting alone signals relevance before the buyer types a word.',
+                  pros: [
+                    'Vehicle-aware greeting establishes relevance instantly, before the buyer types a single word',
+                    'Named persona shifts perception from generic chatbot to a branded dealership assistant the buyer can remember',
+                    'Single conversational interface removes competing modes, one input, one flow, no dashboard to parse first',
+                    'Contextual prompt suggestions lower the activation energy needed to start a conversation',
+                    'Consistent personality throughout the session reinforces trust and differentiates the dealer experience',
+                  ],
                   final: true,
                 },
-              ].map(({ verdict, verdictClass, title, desc, final: isFinal }) => (
+              ].map(({ verdict, verdictClass, title, desc, cons, pros, final: isFinal }) => (
                 <div key={title} className={`vn-iteration${isFinal ? ' vn-iteration--final' : ''}`}>
                   <span className={`vn-iteration-verdict ${verdictClass}`}>{verdict}</span>
                   <div className="vn-iteration-body">
                     <p className="vn-iteration-title">{title}</p>
                     <p className="vn-iteration-desc">{desc}</p>
+                    {cons && (
+                      <ul className="vn-iter-points vn-iter-points--cons">
+                        {cons.map((point, idx) => <li key={idx}>{point}</li>)}
+                      </ul>
+                    )}
+                    {pros && (
+                      <ul className="vn-iter-points vn-iter-points--pros">
+                        {pros.map((point, idx) => <li key={idx}>{point}</li>)}
+                      </ul>
+                    )}
                   </div>
+                </div>
+              ))}
+            </div>
+
+            <p className="im-sub-label" style={{ marginTop: '2.5rem' }}>SmartView chatbot website explorations</p>
+            <p className="pd-body">
+              These screens show the chatbot website design explorations that informed the
+              final Vini direction. Each explored a different way to present the AI assistant
+              on the dealer's website before the embedded viewer approach was chosen.
+            </p>
+
+            <div className="im-flow-screenshots">
+              <div className="im-flow-screen">
+                <span className="im-flow-screen-step">Exploration 1</span>
+                <img
+                  loading="lazy"
+                  src={svIter1}
+                  alt="SmartView chatbot website design exploration 1"
+                  className="im-screenshot"
+                />
+              </div>
+              <div className="im-flow-screen">
+                <span className="im-flow-screen-step">Exploration 2</span>
+                <img
+                  loading="lazy"
+                  src={svIter2}
+                  alt="SmartView chatbot website design exploration 2"
+                  className="im-screenshot"
+                />
+              </div>
+              <div className="im-flow-screen">
+                <span className="im-flow-screen-step">Exploration 3</span>
+                <img
+                  loading="lazy"
+                  src={svIter3}
+                  alt="SmartView chatbot website design exploration 3"
+                  className="im-screenshot"
+                />
+              </div>
+              <div className="im-flow-screen">
+                <span className="im-flow-screen-step">Exploration 4</span>
+                <img
+                  loading="lazy"
+                  src={svIter4}
+                  alt="SmartView chatbot website design exploration 4"
+                  className="im-screenshot"
+                />
+              </div>
+              <div className="im-flow-screen">
+                <span className="im-flow-screen-step">Exploration 5</span>
+                <img
+                  loading="lazy"
+                  src={svIter5}
+                  alt="SmartView chatbot website design exploration 5"
+                  className="im-screenshot"
+                />
+              </div>
+              <div className="im-flow-screen">
+                <span className="im-flow-screen-step">Exploration 6</span>
+                <img
+                  loading="lazy"
+                  src={svIter6}
+                  alt="SmartView chatbot website design exploration 6"
+                  className="im-screenshot"
+                />
+              </div>
+            </div>
+
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════════════════════════════
+          11 FINAL DESIGN
+      ══════════════════════════════════════════════════════════════════════ */}
+      <section id="design-walkthrough" className="pd-section">
+        <div className="container">
+          <motion.div className="pd-section-content im-section-wide" {...fadeUp()}>
+            <span className="im-chip">11: Final Design</span>
+            <h2 className="section-title pd-section-title">
+              The shipped experience
+            </h2>
+            <p className="pd-body">
+              The final SmartView chatbot design delivered across web and mobile.
+            </p>
+
+            <span className="vn-sub-heading">Web</span>
+            <div className="im-flow-screenshots">
+              {[svFinal1, svFinal2, svFinal3, svFinal4, svFinal5, svFinal6,
+                svFinal7, svFinal8, svFinal9, svFinal10, svFinal11, svFinal12,
+                svFinal13, svFinal14, svFinal15, svFinal16, svFinal17, svFinal18
+              ].map((src, i) => (
+                <div className="im-flow-screen" key={i}>
+                  <img
+                    loading="lazy"
+                    src={src}
+                    alt={`SmartView final web design screen ${i + 1}`}
+                    className="im-screenshot"
+                  />
+                </div>
+              ))}
+            </div>
+
+            <span className="vn-sub-heading">Mobile</span>
+            <div className="vn-mweb-strip">
+              {[svMweb1, svMweb2, svMweb3, svMweb4, svMweb5, svMweb6, svMweb7, svMweb8, svMweb9].map((src, i) => (
+                <div className="vn-mweb-screen" key={i}>
+                  <img loading="lazy" src={src} alt={`SmartView final mobile design screen ${i + 1}`} />
                 </div>
               ))}
             </div>
@@ -581,12 +796,12 @@ const ViniDetail = () => {
       </section>
 
       {/* ══════════════════════════════════════════════════════════════════════
-          11 TECHNICAL INTEGRATION
+          12 TECHNICAL INTEGRATION
       ══════════════════════════════════════════════════════════════════════ */}
       <section className="pd-section">
         <div className="container">
           <motion.div className="pd-section-content im-section-wide" {...fadeUp()}>
-            <span className="im-chip">11: Technical Integration</span>
+            <span className="im-chip">12: Technical Integration</span>
             <h2 className="section-title pd-section-title">
               One script tag. Zero workflow changes.
             </h2>
@@ -622,7 +837,7 @@ const ViniDetail = () => {
       <section className="pd-section">
         <div className="container">
           <motion.div className="pd-section-content im-section-wide" {...fadeUp()}>
-            <span className="im-chip">12: Impact</span>
+            <span className="im-chip">13: Impact</span>
             <h2 className="section-title pd-section-title">
               What changes when the conversation is in the right place
             </h2>
@@ -673,7 +888,7 @@ const ViniDetail = () => {
       <section className="pd-section">
         <div className="container">
           <motion.div className="pd-section-content im-section-wide" {...fadeUp()}>
-            <span className="im-chip">13: What Comes Next</span>
+            <span className="im-chip">14: What Comes Next</span>
             <h2 className="section-title pd-section-title">
               Future prospects
             </h2>
@@ -730,7 +945,7 @@ const ViniDetail = () => {
       <section className="pd-section pd-impact-section">
         <div className="container">
           <motion.div className="pd-section-content im-section-wide" {...fadeUp()}>
-            <span className="im-chip">14: Key Learnings</span>
+            <span className="im-chip">15: Key Learnings</span>
             <h2 className="section-title pd-section-title">
               What this project taught me
             </h2>

@@ -31,6 +31,13 @@
   --cs-error-bg:   #FEF2F2;
   --cs-warning:    #D97706;
   --cs-warning-bg: #FFFBEB;
+
+  /* ── Global link color ────────────────────────────────────────────────────
+     Use --link-color for ALL clickable text links across the portfolio and
+     case studies (meta links, inline anchors, CTA text links).
+     Never use a per-project accent color for links.
+  ─────────────────────────────────────────────────────────────────────────── */
+  --link-color: #1D4ED8;
 }
 
 [data-theme="dark"] {
@@ -50,6 +57,8 @@
   --cs-error-bg:   rgba(220, 38, 38, 0.12);
   --cs-warning:    #FCD34D;
   --cs-warning-bg: rgba(217, 119, 6, 0.12);
+
+  --link-color: #93C5FD;
 }
 
 /* High Contrast Mode */
@@ -278,4 +287,27 @@ section {
   .section-header {
     margin-bottom: 1rem;
   }
+}
+
+/* ── Image skeleton shimmer ──────────────────────────────────────────────── */
+@keyframes skeleton-shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+
+.img-skeleton {
+  background-color: var(--bg-secondary);
+  background-image: linear-gradient(
+    90deg,
+    var(--bg-secondary)  0%,
+    var(--border)        50%,
+    var(--bg-secondary)  100%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.5s ease-in-out infinite;
+}
+
+.img-skeleton--loaded {
+  background: none;
+  animation: none;
 }

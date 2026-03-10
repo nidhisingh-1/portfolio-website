@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import './Projects.css';
 import { content } from '../../content';
+import LazyImage from '../ui/LazyImage';
 
 const Projects = () => {
   const { projects } = content;
@@ -36,18 +37,23 @@ const Projects = () => {
           {projects.items.map((project, index) => (
             <motion.article
               key={project.id}
-              className="project-card"
+              className={`project-card${project.comingSoon ? ' project-card--coming-soon' : ''}`}
               custom={index}
               variants={cardVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
-              onClick={() => window.open(`/work/${project.slug}`, '_blank', 'noopener,noreferrer')}
+              onClick={project.comingSoon ? undefined : () => window.open(`/work/${project.slug}`, '_blank', 'noopener,noreferrer')}
             >
+              {project.comingSoon && (
+                <span className="coming-soon-badge">Currently building</span>
+              )}
               {project.image && (
-                <div className="project-image">
-                  <img src={project.image} alt={project.title} />
-                </div>
+                <LazyImage
+                  src={project.image}
+                  alt={project.title}
+                  wrapperClassName="project-image"
+                />
               )}
               <div className="project-content">
                 <div className="project-tags">

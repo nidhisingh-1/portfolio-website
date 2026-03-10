@@ -3,6 +3,19 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import './ProjectDetail.css';
 import './SpyneFlipDetail.css';
+import DesignGallery from '../ui/DesignGallery';
+
+const SF_IMAGES = [
+  { src: '/images/sf-splash.png',       caption: 'Extension splash — Transform your dealership in a click' },
+  { src: '/images/sf-install.png',      caption: 'Step 1 — Install from Chrome Web Store, activate on any dealer site' },
+  { src: '/images/sf-detect.png',       caption: 'Step 2 — Extension detects vehicle image containers on the live page' },
+  { src: '/images/sf-choose.png',       caption: 'Step 3 — Choose products to demo: Studio AI, Vini AI, or both' },
+  { src: '/images/sf-transform.png',    caption: 'Step 4 — Select background style and trigger transformation' },
+  { src: '/images/sf-processing.png',   caption: 'Step 5 — Both products process in parallel, progress visible in real time' },
+  { src: '/images/sf-score-before.png', caption: 'Before — Original lot photos, website score 7.6 Needs Improvement' },
+  { src: '/images/sf-after.png',        caption: 'After — Studio backgrounds live across full inventory, Vini AI active' },
+  { src: '/images/sf-score-after.png',  caption: 'Result — Website score 9.0, Top 1% of Spyne Dealers' },
+];
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 20 },
@@ -68,33 +81,65 @@ const SpyneFlipDetail = () => {
             </p>
           </motion.div>
 
-          <motion.div className="pd-meta"
-            initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.12, ease: [0.25, 0.1, 0.25, 1] }}>
-            <div className="pd-meta-item">
-              <span className="pd-meta-label">Company</span>
-              <span className="pd-meta-value">Spyne AI</span>
-            </div>
-            <div className="pd-meta-item">
-              <span className="pd-meta-label">Product</span>
-              <span className="pd-meta-value">Spyne Flip</span>
-            </div>
-            <div className="pd-meta-item">
-              <span className="pd-meta-label">Timeline</span>
-              <span className="pd-meta-value">2024–2025</span>
-            </div>
-            <div className="pd-meta-item">
-              <span className="pd-meta-label">Extension</span>
-              <a
-                className="sf-store-link"
-                href="https://chromewebstore.google.com/detail/spyne-flip-20/bdgaepajbhafcdjfoomgiofedhjiimob?hl=en&pli=1"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Chrome Web Store ↗
-              </a>
-            </div>
-          </motion.div>
+          <DesignGallery images={SF_IMAGES} title="Spyne Flip — Design Screens">
+            {({ open, openAt }) => (
+              <>
+                <motion.div className="pd-meta"
+                  initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.12, ease: [0.25, 0.1, 0.25, 1] }}>
+                  <div className="pd-meta-item">
+                    <span className="pd-meta-label">Company</span>
+                    <span className="pd-meta-value">Spyne AI</span>
+                  </div>
+                  <div className="pd-meta-item">
+                    <span className="pd-meta-label">Product</span>
+                    <span className="pd-meta-value">Spyne Flip</span>
+                  </div>
+                  <div className="pd-meta-item">
+                    <span className="pd-meta-label">Extension</span>
+                    <a
+                      className="sf-store-link"
+                      href="https://chromewebstore.google.com/detail/spyne-flip-20/bdgaepajbhafcdjfoomgiofedhjiimob?hl=en&pli=1"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Chrome Web Store ↗
+                    </a>
+                  </div>
+                  <div className="pd-meta-item">
+                    <span className="pd-meta-label">Designs</span>
+                    <button className="sf-store-link sf-gallery-btn" onClick={open}>
+                      View all screens ↗
+                    </button>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  className="pd-preview-strip"
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
+                >
+                  <div className="pd-preview-images">
+                    {[0, 2, 6, 7, 8].map((imgIdx, i) => (
+                      <img
+                        key={i}
+                        loading="lazy"
+                        src={SF_IMAGES[imgIdx].src}
+                        alt={SF_IMAGES[imgIdx].caption}
+                        className="pd-preview-img"
+                        onClick={() => openAt(imgIdx)}
+                      />
+                    ))}
+                  </div>
+                  <div className="pd-preview-footer">
+                    <a href="#design-walkthrough" className="pd-preview-note">Full design walkthrough further below ↓</a>
+                    <button className="pd-preview-cta" onClick={open}>View all 9 screens ↗</button>
+                  </div>
+                </motion.div>
+              </>
+            )}
+          </DesignGallery>
         </div>
       </section>
 
@@ -189,6 +234,17 @@ const SpyneFlipDetail = () => {
               a live customer. No integration, no setup, no CMS access required.
             </p>
 
+            <div className="im-flow-screenshots">
+              <div className="im-flow-screen">
+                <img
+                  src="/images/sf-splash.png"
+                  alt="Spyne Flip extension splash screen showing the tagline: Transform your dealership in a click"
+                  className="im-screenshot"
+                />
+                <p className="im-screenshot-caption">The extension launches with a single clear purpose. No configuration wizard, no onboarding friction.</p>
+              </div>
+            </div>
+
             <div className="im-flows-stack">
               <div className="im-flow-card">
                 <p className="im-flow-card-label">Spyne Media Flow</p>
@@ -213,7 +269,7 @@ const SpyneFlipDetail = () => {
       </section>
 
       {/* ══ 04 HOW IT WORKS ═══════════════════════════════════════════════════ */}
-      <section className="pd-section">
+      <section id="design-walkthrough" className="pd-section">
         <div className="container">
           <motion.div className="pd-section-content im-section-wide" {...fadeUp()}>
             <span className="im-chip">04: How It Works</span>
@@ -221,42 +277,58 @@ const SpyneFlipDetail = () => {
               Five steps from install to live transformation
             </h2>
 
-            <div className="sf-steps">
-              <div className="sf-step">
-                <span className="sf-step-num">01</span>
-                <div className="sf-step-body">
-                  <p className="sf-step-title">Install the extension</p>
-                  <p className="sf-step-desc">One-time install from the Chrome Web Store. Authenticated with Spyne credentials. No further configuration.</p>
-                </div>
+            <div className="im-flow-screenshots">
+
+              <div className="im-flow-screen">
+                <span className="im-flow-screen-step">Step 1 — Install & open any dealer site</span>
+                <img
+                  src="/images/sf-install.png"
+                  alt="Chrome extensions panel showing Spyne Flip listed under extensions requesting access to the current site"
+                  className="im-screenshot"
+                />
+                <p className="im-screenshot-caption">One-time install from the Chrome Web Store. The extension appears in the Chrome toolbar and requests access to the current dealer site.</p>
               </div>
-              <div className="sf-step">
-                <span className="sf-step-num">02</span>
-                <div className="sf-step-body">
-                  <p className="sf-step-title">Detect vehicle image containers</p>
-                  <p className="sf-step-desc">The extension scans the page for vehicle carousels and image grids using automotive page patterns.</p>
-                </div>
+
+              <div className="im-flow-screen">
+                <span className="im-flow-screen-step">Step 2 — Detect vehicles on the page</span>
+                <img
+                  src="/images/sf-detect.png"
+                  alt="Dealer website with 8 vehicle image containers highlighted in pink borders. Extension panel shows 8 Vehicle Found."
+                  className="im-screenshot"
+                />
+                <p className="im-screenshot-caption">The extension scans the DOM and highlights every vehicle image container. "8 Vehicle Found" confirms detection before anything is changed.</p>
               </div>
-              <div className="sf-step">
-                <span className="sf-step-num">03</span>
-                <div className="sf-step-body">
-                  <p className="sf-step-title">Replace images with AI studio backgrounds</p>
-                  <p className="sf-step-desc">Vehicle images are sent to Spyne's API. Studio backgrounds replace originals in place, on the live site, in seconds.</p>
-                </div>
+
+              <div className="im-flow-screen">
+                <span className="im-flow-screen-step">Step 3 — Choose products to demo</span>
+                <img
+                  src="/images/sf-choose.png"
+                  alt="Extension panel showing Studio AI and Vini product cards with Enable button. Detected vehicle count shown above."
+                  className="im-screenshot"
+                />
+                <p className="im-screenshot-caption">Sales rep selects which products to demonstrate: Studio AI, Vini AI, or both. This is the only decision point before transformation.</p>
               </div>
-              <div className="sf-step">
-                <span className="sf-step-num">04</span>
-                <div className="sf-step-body">
-                  <p className="sf-step-title">Optimise gallery order (hero angle first)</p>
-                  <p className="sf-step-desc">The image set is reordered to show the best merchandising angle first, mirroring a live Spyne customer's experience.</p>
-                </div>
+
+              <div className="im-flow-screen">
+                <span className="im-flow-screen-step">Step 4 — Select background and transform</span>
+                <img
+                  src="/images/sf-transform.png"
+                  alt="Extension panel showing background selection options with Spyne library thumbnails. Transform CTA button at bottom."
+                  className="im-screenshot"
+                />
+                <p className="im-screenshot-caption">Background style selected from Spyne's library. A single tap on Transform sends all detected images to the Spyne API for processing.</p>
               </div>
-              <div className="sf-step">
-                <span className="sf-step-num">05</span>
-                <div className="sf-step-body">
-                  <p className="sf-step-title">Activate Vini AI on vehicle detail pages</p>
-                  <p className="sf-step-desc">A single toggle surfaces Vini on the VDP with vehicle-aware greetings, exactly as buyers would experience it.</p>
-                </div>
+
+              <div className="im-flow-screen">
+                <span className="im-flow-screen-step">Step 5 — Processing in real time</span>
+                <img
+                  src="/images/sf-processing.png"
+                  alt="Extension panel showing Processing started with 02:30 min remaining. Studio AI showing 10/32 processed, Vini AI processing."
+                  className="im-screenshot"
+                />
+                <p className="im-screenshot-caption">Both products process simultaneously. The panel shows live progress: Studio AI images replaced in batches, Vini AI initialising alongside.</p>
               </div>
+
             </div>
           </motion.div>
         </div>
@@ -335,6 +407,27 @@ const SpyneFlipDetail = () => {
               What changed in the sales experience
             </h2>
 
+            <div className="im-ba-screenshots">
+              <div className="im-ba-screen">
+                <span className="im-ba-screen-tag before">Before</span>
+                <img
+                  src="/images/sf-score-before.png"
+                  alt="Dealer website with original lot photos and showroom images. Extension panel shows website score 7.6 Needs Improvement."
+                  className="im-screenshot"
+                />
+                <p className="im-screenshot-caption">Original dealer site: parking lot and showroom photos, inconsistent angles, website score 7.6. Every prospect sees this version without Spyne.</p>
+              </div>
+              <div className="im-ba-screen">
+                <span className="im-ba-screen-tag after">After</span>
+                <img
+                  src="/images/sf-after.png"
+                  alt="Same dealer website with all vehicles now showing clean studio backgrounds. Vini AI avatar visible in bottom right corner."
+                  className="im-screenshot"
+                />
+                <p className="im-screenshot-caption">Spyne Flip applied: all vehicles show consistent studio backgrounds, gallery order optimised, Vini AI live in the bottom corner. This is the prospect's own site.</p>
+              </div>
+            </div>
+
             <div className="im-ba-wrap">
               <div className="im-ba-row before">
                 <span className="im-ba-tag">Before</span>
@@ -378,6 +471,17 @@ const SpyneFlipDetail = () => {
               <div className="im-metric">
                 <div className="im-metric-val">Any site</div>
                 <div className="im-metric-lbl">Works on any automotive dealer website with no integration required</div>
+              </div>
+            </div>
+
+            <div className="im-flow-screenshots">
+              <div className="im-flow-screen">
+                <img
+                  src="/images/sf-score-after.png"
+                  alt="Extension panel showing website score 9.0 Top 1% of Dealers after Spyne transformation. Before/After score comparison visible."
+                  className="im-screenshot"
+                />
+                <p className="im-screenshot-caption">After transformation: website score jumps to 9.0, placing the dealer in the top 1% of Spyne dealers. The score is generated automatically and shared directly with the prospect during the call.</p>
               </div>
             </div>
           </motion.div>

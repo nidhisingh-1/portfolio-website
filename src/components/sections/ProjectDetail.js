@@ -87,7 +87,7 @@ const ProjectDetail = () => {
           transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
         >
           <div className="pd-image project-image">
-            <img src={project.image} alt={project.title} />
+            <img src={project.image} alt={project.title} loading="lazy" />
           </div>
         </motion.div>
       )}

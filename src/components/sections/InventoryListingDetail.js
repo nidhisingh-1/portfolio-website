@@ -3,6 +3,14 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import './ProjectDetail.css';
 import './InventoryListingDetail.css';
+import DesignGallery from '../ui/DesignGallery';
+
+const INV_IMAGES = [
+  { src: '/images/inv-listing-before.png', caption: 'Before — Media processing status view with no actionable signals' },
+  { src: '/images/inv-listing-after.png',  caption: 'After — Inventory intelligence dashboard with named action categories' },
+  { src: '/images/inv-vin-entry.png',       caption: 'VIN entry — Adding a vehicle to the system' },
+  { src: '/images/inv-vdp-detail.png',      caption: 'VDP — Persistent Actions Required panel and per-platform Publishing Status' },
+];
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 20 },
@@ -99,22 +107,58 @@ const InventoryListingDetail = () => {
             </p>
           </motion.div>
 
-          <motion.div className="pd-meta"
-            initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.12, ease: [0.25, 0.1, 0.25, 1] }}>
-            <div className="pd-meta-item">
-              <span className="pd-meta-label">Company</span>
-              <span className="pd-meta-value">Spyne AI</span>
-            </div>
-            <div className="pd-meta-item">
-              <span className="pd-meta-label">Product</span>
-              <span className="pd-meta-value">Inventory & VDP</span>
-            </div>
-            <div className="pd-meta-item">
-              <span className="pd-meta-label">Timeline</span>
-              <span className="pd-meta-value">2024–2025</span>
-            </div>
-          </motion.div>
+          <DesignGallery images={INV_IMAGES} title="Inventory Listing & VDP — Design Screens">
+            {({ open, openAt }) => (
+              <>
+                <motion.div className="pd-meta"
+                  initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.12, ease: [0.25, 0.1, 0.25, 1] }}>
+                  <div className="pd-meta-item">
+                    <span className="pd-meta-label">Company</span>
+                    <span className="pd-meta-value">Spyne AI</span>
+                  </div>
+                  <div className="pd-meta-item">
+                    <span className="pd-meta-label">Product</span>
+                    <span className="pd-meta-value">Inventory & VDP</span>
+                  </div>
+                  <div className="pd-meta-item">
+                    <span className="pd-meta-label">Timeline</span>
+                    <span className="pd-meta-value">2024–2025</span>
+                  </div>
+                  <div className="pd-meta-item">
+                    <span className="pd-meta-label">Designs</span>
+                    <button className="sf-store-link sf-gallery-btn" onClick={open}>
+                      View all screens ↗
+                    </button>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  className="pd-preview-strip"
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
+                >
+                  <div className="pd-preview-images">
+                    {INV_IMAGES.map((img, i) => (
+                      <img
+                        key={i}
+                        loading="lazy"
+                        src={img.src}
+                        alt={img.caption}
+                        className="pd-preview-img"
+                        onClick={() => openAt(i)}
+                      />
+                    ))}
+                  </div>
+                  <div className="pd-preview-footer">
+                    <a href="#design-walkthrough" className="pd-preview-note">Full design walkthrough further below ↓</a>
+                    <button className="pd-preview-cta" onClick={open}>View all 4 screens ↗</button>
+                  </div>
+                </motion.div>
+              </>
+            )}
+          </DesignGallery>
         </div>
       </section>
 
@@ -194,7 +238,7 @@ const InventoryListingDetail = () => {
       {/* ══════════════════════════════════════════════════════════════════
           03: THE REDESIGN
       ══════════════════════════════════════════════════════════════════ */}
-      <section className="pd-section">
+      <section id="design-walkthrough" className="pd-section">
         <div className="container">
           <motion.div className="pd-section-content im-section-wide" {...fadeUp()}>
             <span className="im-chip">03: The Redesign</span>

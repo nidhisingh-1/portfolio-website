@@ -3,6 +3,10 @@
 // Update this file to change all content on your website
 // ========================================
 
+import spyneFlipThumbnail from './assets/spyne-flip.png';
+import smartViewThumbnail from './assets/smart-view.png';
+import instantMediaThumbnail from './assets/instant media.png';
+
 export const content = {
   // NAVIGATION MENU
   navigation: [
@@ -31,12 +35,12 @@ export const content = {
 
   // PROJECTS SECTION
   projects: {
-    sectionTitle: 'Selected Work',
+    sectionTitle: "Things I've Shipped",
     items: [
       {
         id: 9,
         slug: 'spyne-flip',
-        image: '/images/project-placeholder2.jpg',
+        image: spyneFlipThumbnail,
         tags: ['Sales Enablement', 'Chrome Extension', 'Internal Tool', 'Demo Experience'],
         title: 'Spyne Flip: Transforming Automotive Sales Demos with Real-Time Website Transformation',
         description: 'Designed a Chrome extension that lets sales teams open any dealership website and instantly transform it with Spyne AI studio backgrounds and Vini AI, turning a live prospect\'s own site into a compelling real-time demo.',
@@ -55,7 +59,7 @@ export const content = {
       {
         id: 8,
         slug: 'vini',
-        image: '/images/project-placeholder2.jpg',
+        image: smartViewThumbnail,
         tags: ['Conversational AI', 'Automotive SaaS', 'Embedded Widget', '0→1 Feature'],
         title: 'Vini AI Receptionist for Automotive Dealer Websites',
         description: 'Designed Vini, an AI receptionist embedded directly inside the Spyne-powered vehicle image viewer solving iframe isolation, generic chat, and zero vehicle-context awareness in one product.',
@@ -75,7 +79,7 @@ export const content = {
       {
         id: 6,
         slug: 'instant-media',
-        image: '/images/project-placeholder2.jpg',
+        image: instantMediaThumbnail,
         tags: ['Automotive SaaS', 'Product Strategy', 'Velocity Feature'],
         title: 'Instant Media – Reducing Time-to-Live in Automotive Retail',
         description: 'Designed a zero-friction media publishing feature enabling dealers to list vehicles same-day using matched OEM or rooftop catalog images eliminating the 2–5 day offline window between acquisition and listing.',
@@ -94,6 +98,7 @@ export const content = {
       {
         id: 7,
         slug: 'inventory-listing-vdp',
+        comingSoon: true,
         image: '/images/inv-listing-after.png',
         tags: ['Inventory Intelligence', 'Enterprise UX', 'Metrics Design', 'VDP'],
         title: 'Inventory Listing & VDP Turning a Media Tool into an Intelligence Dashboard',

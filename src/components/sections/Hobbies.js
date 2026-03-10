@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import './Hobbies.css';
 import { content } from '../../content';
+import LazyImage from '../ui/LazyImage';
 
 const Hobbies = () => {
   const { hobbies } = content;
@@ -76,14 +77,13 @@ const Hobbies = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: index * 0.1, ease: [0.25, 0.1, 0.25, 1] }}
                   >
-                    <div className="gallery-image-wrapper">
-                      <img
-                        src={image.src}
-                        alt={image.alt}
-                        className="gallery-image"
-                        draggable={false}
-                      />
-                    </div>
+                    <LazyImage
+                      src={image.src}
+                      alt={image.alt}
+                      imgClassName="gallery-image"
+                      wrapperClassName="gallery-image-wrapper"
+                      draggable={false}
+                    />
                     {image.caption && (
                       <p className="gallery-caption">{image.caption}</p>
                     )}
