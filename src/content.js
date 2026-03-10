@@ -3,9 +3,9 @@
 // Update this file to change all content on your website
 // ========================================
 
-import spyneFlipThumbnail from './assets/spyne-flip.png';
-import smartViewThumbnail from './assets/smart-view.png';
-import instantMediaThumbnail from './assets/instant media.png';
+import spyneFlipThumbnail from './assets/spyne flip/spyne-flip.png';
+import smartViewThumbnail from './assets/smartview/smart-view.png';
+import instantMediaThumbnail from './assets/instant-media/instant-media.png';
 
 export const content = {
   // NAVIGATION MENU

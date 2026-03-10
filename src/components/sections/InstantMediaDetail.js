@@ -4,13 +4,14 @@ import { motion } from 'framer-motion';
 import './ProjectDetail.css';
 import './InstantMediaDetail.css';
 import DesignGallery from '../ui/DesignGallery';
+import imVinClone from '../../assets/instant-media/373.png';
 
 const IM_IMAGES = [
   { src: '/images/im-upload-empty.png',  caption: 'Before — Empty upload screen, no media means no listing' },
   { src: '/images/im-trigger.png',       caption: 'Instant Media trigger — Go live instantly with your media library' },
   { src: '/images/im-ymmt-input.png',    caption: 'Step 1 — YMMT input: Year, Make, Model, Trim to find matching stock images' },
   { src: '/images/im-finding-match.png', caption: 'Step 2 — Matching against Rooftop Library or OEM catalog' },
-  { src: '/images/im-match-results.png', caption: 'Step 3 — Confidence-scored results with Best Match highlight' },
+  { src: imVinClone,                     caption: 'Step 3 — Confidence-scored results with Best Match highlight' },
   { src: '/images/im-live-listing.png',  caption: 'Step 4 — Listing live with transparency badge on every image' },
   { src: '/images/im-iter-1.png',        caption: 'Iteration 1 — Explicit CTA entry point (rejected)' },
   { src: '/images/im-iter-2.png',        caption: 'Iteration 2 — Stock library with variant details (rejected)' },
@@ -383,7 +384,7 @@ const InstantMediaDetail = () => {
               </div>
               <div className="im-flow-screen">
                 <span className="im-flow-screen-step">Step 3 Select Match</span>
-                <img loading="lazy" src="/images/im-match-results.png" alt="Match results grid showing Best Match badge and Use Media buttons" className="im-screenshot" />
+                <img loading="lazy" src={imVinClone} alt="Match results grid showing Best Match badge and Use Media buttons" className="im-screenshot" />
                 <p className="im-screenshot-caption">Confidence-scored results with Best Match highlight</p>
               </div>
               <div className="im-flow-screen">
