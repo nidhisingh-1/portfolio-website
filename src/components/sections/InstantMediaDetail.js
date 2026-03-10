@@ -375,7 +375,7 @@ const InstantMediaDetail = () => {
               </div>
               <div className="im-flow-screen">
                 <span className="im-flow-screen-step">Iteration 3 — Side panel, grid layout</span>
-                <img src="/images/im-iter-3.png" alt="Split layout — upload on left, Cloned Media suggestion panel on right with 2x2 image grid" className="im-screenshot" />
+                <img src="/images/im-iter-3.png" alt="Split layout — upload on left, Cloned Media suggestion panel on right with 2x2 grid" className="im-screenshot" />
                 <p className="im-screenshot-caption">Persistent side panel kept upload and match selection visible together — but split focus and felt cluttered on smaller viewports.</p>
               </div>
               <div className="im-flow-screen">

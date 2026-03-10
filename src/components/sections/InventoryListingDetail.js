@@ -655,7 +655,7 @@ const InventoryListingDetail = () => {
                 <span className="im-flow-screen-step">Vehicle Detail Page — Actions Required + Publishing Status panel</span>
                 <img
                   src="/images/inv-vdp-detail.png"
-                  alt="Vehicle detail page showing Actions Required panel (No Photos 34, CGI Photos 1, Less than 8 media 34), Publishing Status section with Vauto platform sync states, and main content area with image gallery and vehicle spec details"
+                  alt="Vehicle detail page showing Actions Required panel (No Pics 34, CGI Pics 1, Less than 8 media 34), Publishing Status section with Vauto platform sync states, and main content area with a media gallery and vehicle spec details"
                   className="im-screenshot"
                 />
                 <p className="im-screenshot-caption">
