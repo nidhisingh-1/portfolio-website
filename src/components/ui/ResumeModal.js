@@ -79,7 +79,7 @@ const ResumeModal = ({ isOpen, onClose }) => {
             <div className="rm-preview">
               <iframe
                 src={`${resumePdf}#toolbar=0&navpanes=0`}
-                title="Nidhi — Resume"
+                title="Nidhi Resume"
                 className="rm-iframe"
               />
             </div>

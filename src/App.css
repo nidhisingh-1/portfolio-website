@@ -14,6 +14,23 @@
   --text-muted: #999999;
   --accent: #2D2D2D;
   --border: #E5E5E5;
+
+  /* ── Case study shared tokens ─────────────────────────────────────────────
+     These are used consistently across ALL case study pages.
+     - --cs-chip:       section chip / label color (teal, portfolio brand)
+     - --cs-success:    shipped / final / positive states (green)
+     - --cs-error:      problems / blockers / errors (red)
+     - --cs-warning:    warnings / caution states (amber)
+     Per-project accent colors live in each case study's own CSS file.
+  ─────────────────────────────────────────────────────────────────────────── */
+  --cs-chip:       #0D9488;
+  --cs-chip-bg:    #F0FDFA;
+  --cs-success:    #16A34A;
+  --cs-success-bg: #F0FDF4;
+  --cs-error:      #DC2626;
+  --cs-error-bg:   #FEF2F2;
+  --cs-warning:    #D97706;
+  --cs-warning-bg: #FFFBEB;
 }
 
 [data-theme="dark"] {
@@ -24,6 +41,15 @@
   --text-muted: #777777;
   --accent: #E5E5E5;
   --border: #2D2D2D;
+
+  --cs-chip:       #2DD4BF;
+  --cs-chip-bg:    rgba(13, 148, 136, 0.12);
+  --cs-success:    #86EFAC;
+  --cs-success-bg: rgba(22, 163, 74, 0.12);
+  --cs-error:      #FCA5A5;
+  --cs-error-bg:   rgba(220, 38, 38, 0.12);
+  --cs-warning:    #FCD34D;
+  --cs-warning-bg: rgba(217, 119, 6, 0.12);
 }
 
 /* High Contrast Mode */

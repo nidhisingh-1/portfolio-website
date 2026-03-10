@@ -1,0 +1,442 @@
+/* ── Spyne Flip Demo Extension Case Study ─────────────────────────────────────
+   Prefix: sf
+   Accent: Orange #EA580C (not used by any other case study)
+   Extends ProjectDetail.css and reuses shared tokens from InstantMediaDetail.css
+──────────────────────────────────────────────────────────────────────────────── */
+
+/* ── Accent tokens ─────────────────────────────────────────────────────────── */
+:root {
+  --sf-accent:    #EA580C;
+  --sf-accent-bg: #FFF7ED;
+}
+
+[data-theme="dark"] {
+  --sf-accent:    #FB923C;
+  --sf-accent-bg: rgba(234, 88, 12, 0.12);
+}
+
+/* ── Chrome Web Store link in hero meta ────────────────────────────────────── */
+.sf-store-link {
+  font-size: 0.875rem;
+  color: var(--sf-accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.15s ease;
+}
+
+.sf-store-link:hover {
+  opacity: 0.75;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   CONTEXT FLOW
+══════════════════════════════════════════════════════════════════════════════ */
+
+.sf-context-flow {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 2.25rem 0;
+}
+
+.sf-context-step {
+  padding: 1.1rem 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-secondary);
+  flex: 1;
+  min-width: 140px;
+}
+
+.sf-context-step--highlight {
+  border-color: var(--sf-accent);
+  background: var(--sf-accent-bg);
+}
+
+.sf-context-step-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-bottom: 0.4rem;
+  display: block;
+}
+
+.sf-context-step--highlight .sf-context-step-label {
+  color: var(--sf-accent);
+}
+
+.sf-context-step-desc {
+  font-size: 0.825rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.sf-context-arrow {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  align-self: center;
+  padding: 0 0.6rem;
+  flex-shrink: 0;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   INSIGHT HIGHLIGHT BLOCK
+══════════════════════════════════════════════════════════════════════════════ */
+
+.sf-insight-highlight {
+  margin: 2rem 0;
+  padding: 1.5rem 1.75rem;
+  border: 1px solid var(--sf-accent);
+  border-left: 3px solid var(--sf-accent);
+  border-radius: 0 8px 8px 0;
+  background: var(--sf-accent-bg);
+}
+
+.sf-insight-highlight-label {
+  font-size: 0.58rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--sf-accent);
+  margin-bottom: 0.6rem;
+  display: block;
+}
+
+.sf-insight-highlight-text {
+  font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+  color: var(--text-primary);
+  line-height: 1.75;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   STEP FLOW (HOW IT WORKS)
+══════════════════════════════════════════════════════════════════════════════ */
+
+.sf-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 2.25rem 0;
+}
+
+.sf-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.sf-step:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+.sf-step-num {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--sf-accent-bg);
+  border: 1px solid var(--sf-accent);
+  color: var(--sf-accent);
+  font-size: 0.7rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+  letter-spacing: 0.03em;
+}
+
+.sf-step-body {
+  flex: 1;
+}
+
+.sf-step-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.sf-step-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   FEATURE CAPABILITY GRID (3 columns)
+══════════════════════════════════════════════════════════════════════════════ */
+
+.sf-cap-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin: 2rem 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.sf-cap-card {
+  padding: 1.35rem 1.4rem;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-secondary);
+  transition: background 0.2s ease;
+}
+
+.sf-cap-card:nth-child(3n)          { border-right: none; }
+.sf-cap-card:nth-last-child(-n+3)   { border-bottom: none; }
+.sf-cap-card:hover                  { background: var(--bg-primary); }
+
+.sf-cap-icon {
+  font-size: 1.25rem;
+  display: block;
+  margin-bottom: 0.7rem;
+  line-height: 1;
+}
+
+.sf-cap-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+  line-height: 1.4;
+}
+
+.sf-cap-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   NUMBERED LIST (DESIGN DECISIONS / PRINCIPLES)
+══════════════════════════════════════════════════════════════════════════════ */
+
+.sf-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 2rem 0;
+}
+
+.sf-list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 1.1rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.sf-list-item:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+.sf-list-item--accent {
+  background: var(--sf-accent-bg);
+  padding: 1.1rem 1rem;
+  margin: 0 -1rem;
+  border-top: 1px solid var(--sf-accent) !important;
+  border-bottom: 1px solid var(--sf-accent) !important;
+}
+
+.sf-list-num {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--sf-accent);
+  min-width: 1.75rem;
+  padding-top: 0.15rem;
+  letter-spacing: 0.04em;
+}
+
+.sf-list-body { flex: 1; }
+
+.sf-list-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.2rem;
+}
+
+.sf-list-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   DESIGN DECISIONS (own variant so Shipped uses --sf-accent, not im-green)
+══════════════════════════════════════════════════════════════════════════════ */
+
+.sf-decisions {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 1.5rem 0;
+}
+
+.sf-decision {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-top: 1px solid var(--border);
+  background: none;
+}
+
+.sf-decision:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+.sf-decision--final {
+  padding-left: 0.85rem;
+  border-left: 2px solid var(--sf-accent);
+  margin-left: -0.85rem;
+}
+
+.sf-decision-badge {
+  font-size: 0.58rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  flex-shrink: 0;
+  min-width: 52px;
+  padding-top: 2px;
+}
+
+.sf-decision-badge--no  { color: var(--text-muted); }
+.sf-decision-badge--yes { color: var(--sf-accent); }
+
+.sf-decision-body { flex: 1; }
+
+.sf-decision-title {
+  font-size: 0.925rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 0.3rem;
+}
+
+.sf-decision--final .sf-decision-title {
+  color: var(--sf-accent);
+  font-weight: 600;
+}
+
+.sf-decision-desc {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.sf-decision--final .sf-decision-desc {
+  color: var(--text-secondary);
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   COMPARE GRID (BEFORE / AFTER EXPERIENCE CARDS)
+══════════════════════════════════════════════════════════════════════════════ */
+
+.sf-compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.sf-compare-card {
+  padding: 1.35rem 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-secondary);
+}
+
+.sf-compare-card--highlight {
+  border-color: var(--sf-accent);
+  background: var(--sf-accent-bg);
+}
+
+.sf-compare-card-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-bottom: 0.9rem;
+  display: block;
+}
+
+.sf-compare-card--highlight .sf-compare-card-label {
+  color: var(--sf-accent);
+}
+
+.sf-compare-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.sf-compare-list li {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.sf-compare-list li::before {
+  content: '-';
+  position: absolute;
+  left: 0;
+  color: var(--text-muted);
+}
+
+.sf-compare-card--highlight .sf-compare-list li { color: var(--text-primary); }
+.sf-compare-card--highlight .sf-compare-list li::before {
+  content: '✓';
+  color: var(--sf-accent);
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 960px) {
+  .sf-context-arrow { display: none; }
+  .sf-context-step  { min-width: 120px; }
+}
+
+@media (max-width: 860px) {
+  .sf-compare-grid  { grid-template-columns: 1fr; }
+  .sf-cap-grid      { grid-template-columns: 1fr 1fr; }
+  .sf-cap-card:nth-child(3n)        { border-right: 1px solid var(--border); }
+  .sf-cap-card:nth-child(2n)        { border-right: none; }
+  .sf-cap-card:nth-last-child(-n+3) { border-bottom: 1px solid var(--border); }
+  .sf-cap-card:nth-last-child(-n+2) { border-bottom: none; }
+}
+
+@media (max-width: 640px) {
+  .sf-context-flow  { flex-direction: column; }
+  .sf-cap-grid      { grid-template-columns: 1fr; }
+  .sf-cap-card      { border-right: none !important; border-bottom: 1px solid var(--border) !important; }
+  .sf-cap-card:last-child { border-bottom: none !important; }
+}
+
+@media (max-width: 580px) {
+  .sf-context-step  { min-width: unset; }
+  .sf-compare-grid  { grid-template-columns: 1fr; }
+}

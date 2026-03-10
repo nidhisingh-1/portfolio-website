@@ -1,0 +1,630 @@
+/* ── Vini Case Study ──────────────────────────────────────────────────────────
+   Visual language: context flows · capability grid · iteration cards.
+   Extends ProjectDetail.css and reuses InstantMediaDetail.css patterns.
+   Accent: teal / indigo: differentiated from the blue used in Instant Media.
+──────────────────────────────────────────────────────────────────────────── */
+
+/* ── Accent tokens ─────────────────────────────────────────────────────────── */
+:root {
+  --vn-accent:    #0D9488;
+  --vn-accent-bg: #F0FDFA;
+  --vn-indigo:    #4F46E5;
+  --vn-indigo-bg: #EEF2FF;
+}
+
+[data-theme="dark"] {
+  --vn-accent:    #2DD4BF;
+  --vn-accent-bg: rgba(13, 148, 136, 0.12);
+  --vn-indigo:    #A5B4FC;
+  --vn-indigo-bg: rgba(79, 70, 229, 0.12);
+}
+
+
+/* ════════════════════════════════════════════════════════════════════════════
+   CONTEXT FLOW
+════════════════════════════════════════════════════════════════════════════ */
+
+.vn-context-flow {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 2.25rem 0;
+}
+
+.vn-context-step {
+  padding: 1.1rem 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-secondary);
+  flex: 1;
+  min-width: 140px;
+}
+
+.vn-context-step--highlight {
+  border-color: var(--vn-accent);
+  background: var(--vn-accent-bg);
+}
+
+.vn-context-step-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-bottom: 0.4rem;
+}
+
+.vn-context-step--highlight .vn-context-step-label {
+  color: var(--vn-accent);
+}
+
+.vn-context-step-desc {
+  font-size: 0.825rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.vn-context-arrow {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  align-self: center;
+  padding: 0 0.6rem;
+  flex-shrink: 0;
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   RESEARCH
+════════════════════════════════════════════════════════════════════════════ */
+
+.vn-research-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0 0.5rem;
+}
+
+.vn-research-tag {
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.3rem 0.75rem;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+  white-space: nowrap;
+}
+
+.vn-research-tag--platform {
+  border-color: var(--vn-indigo);
+  color: var(--vn-indigo);
+  background: var(--vn-indigo-bg);
+}
+
+/* ── Sub-section heading: visually above row labels ───────────────────────── */
+/* Use this instead of im-sub-label inside Vini to avoid collision with         */
+/* vn-finding-tag and other uppercase row labels.                               */
+.vn-sub-heading {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  letter-spacing: 0;
+  text-transform: none;
+  margin: 2.25rem 0 0.75rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Findings list ──────────────────────────────────────────────────────────── */
+.vn-findings {
+  margin: 1.5rem 0;
+}
+
+.vn-finding {
+  display: flex;
+  align-items: baseline;
+  gap: 1.25rem;
+  padding: 0.9rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.vn-finding:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+.vn-finding-tag {
+  font-size: 0.55rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  min-width: 90px;
+  opacity: 0.7;
+}
+
+.vn-finding-text {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   INSIGHT CARDS
+════════════════════════════════════════════════════════════════════════════ */
+
+.vn-insights-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.vn-insight-card {
+  padding: 1.25rem 1.35rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-secondary);
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.vn-insight-num {
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+.vn-insight-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+}
+
+.vn-insight-desc {
+  font-size: 0.825rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   KEY INSIGHT HIGHLIGHT
+════════════════════════════════════════════════════════════════════════════ */
+
+.vn-insight-highlight {
+  margin: 2rem 0;
+  padding: 1.5rem 1.75rem;
+  border: 1px solid var(--vn-accent);
+  border-left: 3px solid var(--vn-accent);
+  border-radius: 0 8px 8px 0;
+  background: var(--vn-accent-bg);
+}
+
+.vn-insight-highlight-label {
+  font-size: 0.58rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--vn-accent);
+  margin-bottom: 0.6rem;
+}
+
+.vn-insight-highlight-text {
+  font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+  color: var(--text-primary);
+  line-height: 1.75;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   DESIGN GOAL: FROM / TO
+════════════════════════════════════════════════════════════════════════════ */
+
+.vn-goal-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 2rem 0;
+}
+
+/* FROM row */
+.vn-goal-item {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+  padding: 1.1rem 0 1.1rem 1.25rem;
+  border-top: 1px solid var(--border);
+  border-left: 2px solid var(--border);
+}
+
+/* TO row */
+.vn-goal-item:last-child {
+  border-bottom: 1px solid var(--border);
+  border-left: 2px solid var(--vn-accent);
+  background: none;
+}
+
+.vn-goal-label {
+  font-size: 0.58rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  min-width: 32px;
+  padding-top: 2px;
+}
+
+.vn-goal-item:last-child .vn-goal-label {
+  color: var(--vn-accent);
+}
+
+.vn-goal-text {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.vn-goal-item:last-child .vn-goal-text {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+/* Hide arrow: no longer needed */
+.vn-goal-arrow {
+  display: none;
+}
+
+/* ── Design principles: clean list layout ──────────────────────────────────── */
+.vn-principles {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 2.25rem 0;
+}
+
+.vn-principle {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 1.1rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.vn-principle:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+/* Shared dot used in vn-principle and vn-prop */
+.vn-principle-dot,
+.vn-prop-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--vn-accent);
+  flex-shrink: 0;
+  margin-top: 0.45rem;
+  position: static;
+}
+
+.vn-principle-body {
+  flex: 1;
+}
+
+.vn-principle-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.vn-principle-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   CONCEPT CARDS (Chatbot vs Vini)
+════════════════════════════════════════════════════════════════════════════ */
+
+.vn-concept-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.vn-concept-card {
+  padding: 1.35rem 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-secondary);
+}
+
+.vn-concept-card--highlight {
+  border-color: var(--vn-accent);
+  background: var(--vn-accent-bg);
+}
+
+.vn-concept-card-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-bottom: 0.9rem;
+}
+
+.vn-concept-card--highlight .vn-concept-card-label {
+  color: var(--vn-accent);
+}
+
+.vn-concept-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.vn-concept-list li {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.vn-concept-list li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: var(--text-muted);
+}
+
+.vn-concept-card--highlight .vn-concept-list li {
+  color: var(--text-primary);
+}
+
+.vn-concept-card--highlight .vn-concept-list li::before {
+  color: var(--vn-accent);
+  content: '✓';
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   SHARED NUMBERED LIST
+   Used by: solution flow, tech integration points, key learnings
+════════════════════════════════════════════════════════════════════════════ */
+
+.vn-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 2rem 0;
+}
+
+.vn-solution-connector { display: none; }
+
+.vn-list-item {
+  display: flex;
+  align-items: baseline;
+  gap: 1.1rem;
+  padding: 0.9rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.vn-list-item:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+.vn-list-item--accent .vn-list-num   { color: var(--vn-accent); }
+.vn-list-item--accent .vn-list-title { color: var(--vn-accent); }
+
+.vn-list-num {
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  flex-shrink: 0;
+  min-width: 22px;
+  padding-top: 2px;
+}
+
+.vn-list-body { flex: 1; }
+
+.vn-list-title {
+  font-size: 0.925rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+  line-height: 1.4;
+}
+
+.vn-list-desc {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   CAPABILITY GRID
+════════════════════════════════════════════════════════════════════════════ */
+
+.vn-cap-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin: 2rem 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.vn-cap-card {
+  padding: 1.35rem 1.4rem;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-secondary);
+  transition: background 0.2s ease;
+}
+
+.vn-cap-card:nth-child(3n) {
+  border-right: none;
+}
+
+.vn-cap-card:nth-last-child(-n+3) {
+  border-bottom: none;
+}
+
+.vn-cap-card:hover {
+  background: var(--bg-primary);
+}
+
+.vn-cap-icon {
+  font-size: 1.25rem;
+  display: block;
+  margin-bottom: 0.7rem;
+  line-height: 1;
+}
+
+.vn-cap-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+  line-height: 1.4;
+}
+
+.vn-cap-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   DESIGN ITERATIONS
+════════════════════════════════════════════════════════════════════════════ */
+
+.vn-iterations {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 2rem 0;
+}
+
+.vn-iteration {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.vn-iteration:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+.vn-iteration--final {
+  padding-left: 0.85rem;
+  border-left: 2px solid var(--vn-accent);
+  margin-left: -0.85rem;
+}
+
+.vn-iteration-verdict {
+  font-size: 0.58rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  flex-shrink: 0;
+  min-width: 52px;
+  padding-top: 2px;
+}
+
+.vn-verdict--no  { color: var(--text-muted); }
+.vn-verdict--yes { color: var(--vn-accent); }
+
+.vn-iteration-body { flex: 1; }
+
+.vn-iteration-title {
+  font-size: 0.925rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 0.25rem;
+}
+
+.vn-iteration--final .vn-iteration-title {
+  color: var(--vn-accent);
+  font-weight: 600;
+}
+
+.vn-iteration-desc {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.vn-iteration--final .vn-iteration-desc {
+  color: var(--text-secondary);
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   TECHNICAL INTEGRATION
+════════════════════════════════════════════════════════════════════════════ */
+
+.vn-tech-flow {
+  margin: 2rem 0;
+  padding: 1.25rem 1.35rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-secondary);
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   RESPONSIVE
+════════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 960px) {
+  .vn-context-step       { min-width: 120px; }
+  .vn-context-arrow      { display: none; }
+}
+
+@media (max-width: 860px) {
+  .vn-insights-grid      { grid-template-columns: 1fr; }
+  .vn-cap-grid           { grid-template-columns: 1fr 1fr; }
+  .vn-cap-card:nth-child(3n)          { border-right: 1px solid var(--border); }
+  .vn-cap-card:nth-child(2n)          { border-right: none; }
+  .vn-cap-card:nth-last-child(-n+3)   { border-bottom: 1px solid var(--border); }
+  .vn-cap-card:nth-last-child(-n+2)   { border-bottom: none; }
+  .vn-concept-cards      { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  .vn-cap-grid           { grid-template-columns: 1fr; }
+  .vn-cap-card           { border-right: none !important; border-bottom: 1px solid var(--border) !important; }
+  .vn-cap-card:last-child { border-bottom: none !important; }
+  .vn-context-flow       { flex-direction: column; }
+}
+
+@media (max-width: 580px) {
+  .vn-concept-cards      { grid-template-columns: 1fr; }
+  .vn-insights-grid      { grid-template-columns: 1fr; }
+  .vn-context-step       { min-width: unset; }
+  .vn-goal-item          { flex-direction: column; gap: 0.4rem; }
+}

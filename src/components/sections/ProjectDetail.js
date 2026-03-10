@@ -25,7 +25,7 @@ const ProjectDetail = () => {
   return (
     <div className="pd-page">
 
-      {/* Back link — sits in the same fixed sidebar position as the nav */}
+      {/* Back link sits in the same fixed sidebar position as the nav */}
       <motion.button
         className="pd-back"
         onClick={() => navigate('/')}
@@ -37,7 +37,7 @@ const ProjectDetail = () => {
         Back
       </motion.button>
 
-      {/* Hero section — same structure as all landing sections */}
+      {/* Hero section same structure as all landing sections */}
       <section className="pd-hero">
         <div className="container">
           <motion.div
@@ -55,7 +55,7 @@ const ProjectDetail = () => {
             <p className="pd-lead">{project.description}</p>
           </motion.div>
 
-          {/* Meta row — styled like experience items */}
+          {/* Meta row styled like experience items */}
           <motion.div
             className="pd-meta"
             initial={{ opacity: 0, y: 16 }}
@@ -110,7 +110,7 @@ const ProjectDetail = () => {
         </section>
       )}
 
-      {/* Highlights — each item styled like an experience row */}
+      {/* Highlights each item styled like an experience row */}
       {project.highlights && (
         <section className="pd-section">
           <div className="container">

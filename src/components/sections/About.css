@@ -55,7 +55,7 @@
   transition: filter 0.3s ease;
 }
 
-/* Logos that are inherently dark-coloured — invert them in dark mode */
+/* Logos that are inherently dark-coloured: invert them in dark mode */
 [data-theme="dark"] .marquee-logo-dark-invert {
   filter: brightness(0) invert(1);
 }

@@ -22,6 +22,17 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# private docs (guides, notes, planning files)
+*GUIDE.md
+*NOTES.md
+*PLAN.md
+*TODO.md
+*BRIEF.md
+*DRAFT.md
+
+# Cursor IDE config
+.cursor/
+
 # IDEs
 .vscode/
 .idea/

@@ -1,0 +1,318 @@
+/* ── [YOUR NAME] Case Study ───────────────────────────────────────────────────
+   Rename this file to YourNameDetail.css.
+   Replace every "xx" / "XX" with your 2-letter prefix.
+   Extends ProjectDetail.css and uses global tokens from App.css.
+──────────────────────────────────────────────────────────────────────────────
+
+   STEP 1: Pick a project accent color not already taken:
+     • Blue   #1D4ED8 : taken by Instant Media (--im-blue)
+     • Teal   #0D9488 : taken by Vini (--vn-accent) and chip labels (--cs-chip)
+     • Orange #EA580C : taken by SpyneFlip (--sf-accent)
+     • Indigo #6366F1 : taken by Inventory Listing (--inv-accent)
+   Available: purple, amber, rose, slate, emerald, cyan, or any other hue.
+
+   Do NOT repurpose --cs-success (#16A34A), --cs-error (#DC2626),
+   or --cs-warning (#D97706) as project accents: those are reserved for
+   semantic states (shipped, problem, warning) shared across all case studies.
+
+   STEP 2: Choose a light background tint for highlighted cards.
+   Formula: same hue, very light (opacity 0.05-0.08 on white background).
+   Example values included below: replace with your chosen color.
+
+   STEP 3: Add a dark mode variant for both tokens.
+   Dark mode accent should be a lighter/desaturated version of your color.
+──────────────────────────────────────────────────────────────────────────── */
+
+/* ── Accent tokens ─────────────────────────────────────────────────────────── */
+:root {
+  --xx-accent:    #7C3AED;          /* ← replace with your accent color */
+  --xx-accent-bg: #F5F3FF;          /* ← replace with your light tint */
+}
+
+[data-theme="dark"] {
+  --xx-accent:    #A78BFA;          /* ← replace with dark-mode variant */
+  --xx-accent-bg: rgba(124, 58, 237, 0.12); /* ← replace with rgba of your color */
+}
+
+/* ── Chip color ────────────────────────────────────────────────────────────── */
+/* im-chip uses --cs-chip (teal #0D9488) defined globally in App.css.
+   All case study section chips are the same teal color by default: this is
+   intentional. Do not override unless you have a strong reason. */
+/* .xx-chip { color: var(--xx-accent) !important; } */
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   SHARED COMPONENT OVERRIDES
+   Use this section to restyle any shared components with your accent color.
+   Remove any blocks you don't need.
+══════════════════════════════════════════════════════════════════════════════ */
+
+/* Highlight context flow step */
+.xx-context-step--highlight {
+  border-color: var(--xx-accent);
+  background: var(--xx-accent-bg);
+}
+
+.xx-context-step--highlight .xx-context-step-label {
+  color: var(--xx-accent);
+}
+
+/* Key insight highlight block */
+.xx-insight-highlight {
+  margin: 2rem 0;
+  padding: 1.5rem 1.75rem;
+  border: 1px solid var(--xx-accent);
+  border-left: 3px solid var(--xx-accent);
+  border-radius: 0 8px 8px 0;
+  background: var(--xx-accent-bg);
+}
+
+.xx-insight-highlight-label {
+  font-size: 0.58rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--xx-accent);
+  margin-bottom: 0.6rem;
+  display: block;
+}
+
+.xx-insight-highlight-text {
+  font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+  color: var(--text-primary);
+  line-height: 1.75;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   PAGE-SPECIFIC COMPONENTS
+   Add any components unique to this case study below.
+   Name every class with your prefix: .xx-component-name
+   This prevents collisions with other case study CSS files.
+══════════════════════════════════════════════════════════════════════════════ */
+
+/* ── Example: Context flow diagram ────────────────────────────────────────── */
+.xx-context-flow {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 2.25rem 0;
+}
+
+.xx-context-step {
+  padding: 1.1rem 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-secondary);
+  flex: 1;
+  min-width: 140px;
+}
+
+.xx-context-step-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-bottom: 0.4rem;
+}
+
+.xx-context-step-desc {
+  font-size: 0.825rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.xx-context-arrow {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  align-self: center;
+  padding: 0 0.6rem;
+  flex-shrink: 0;
+}
+
+/* ── Example: 2-column comparison cards ──────────────────────────────────── */
+.xx-compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.xx-compare-card {
+  padding: 1.35rem 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-secondary);
+}
+
+.xx-compare-card--highlight {
+  border-color: var(--xx-accent);
+  background: var(--xx-accent-bg);
+}
+
+.xx-compare-card-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-bottom: 0.9rem;
+}
+
+.xx-compare-card--highlight .xx-compare-card-label {
+  color: var(--xx-accent);
+}
+
+.xx-compare-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.xx-compare-list li {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.xx-compare-list li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: var(--text-muted);
+}
+
+.xx-compare-card--highlight .xx-compare-list li { color: var(--text-primary); }
+.xx-compare-card--highlight .xx-compare-list li::before {
+  content: '✓';
+  color: var(--xx-accent);
+}
+
+/* ── Example: Numbered principles / properties list ──────────────────────── */
+.xx-principles {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 2.25rem 0;
+}
+
+.xx-principle {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 1.1rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.xx-principle:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+.xx-principle-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--xx-accent);
+  flex-shrink: 0;
+  margin-top: 0.45rem;
+}
+
+.xx-principle-body { flex: 1; }
+
+.xx-principle-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.xx-principle-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ── Example: Capability / feature grid (3×N) ─────────────────────────────── */
+.xx-cap-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin: 2rem 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.xx-cap-card {
+  padding: 1.35rem 1.4rem;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-secondary);
+  transition: background 0.2s ease;
+}
+
+.xx-cap-card:nth-child(3n)          { border-right: none; }
+.xx-cap-card:nth-last-child(-n+3)   { border-bottom: none; }
+.xx-cap-card:hover                  { background: var(--bg-primary); }
+
+.xx-cap-icon {
+  font-size: 1.25rem;
+  display: block;
+  margin-bottom: 0.7rem;
+  line-height: 1;
+}
+
+.xx-cap-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+  line-height: 1.4;
+}
+
+.xx-cap-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   RESPONSIVE
+   Mirror the breakpoints used by the other case study files.
+══════════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 960px) {
+  .xx-context-arrow   { display: none; }
+  .xx-context-step    { min-width: 120px; }
+}
+
+@media (max-width: 860px) {
+  .xx-compare-grid    { grid-template-columns: 1fr; }
+  .xx-cap-grid        { grid-template-columns: 1fr 1fr; }
+  .xx-cap-card:nth-child(3n)        { border-right: 1px solid var(--border); }
+  .xx-cap-card:nth-child(2n)        { border-right: none; }
+  .xx-cap-card:nth-last-child(-n+3) { border-bottom: 1px solid var(--border); }
+  .xx-cap-card:nth-last-child(-n+2) { border-bottom: none; }
+}
+
+@media (max-width: 640px) {
+  .xx-context-flow    { flex-direction: column; }
+  .xx-cap-grid        { grid-template-columns: 1fr; }
+  .xx-cap-card        { border-right: none !important; border-bottom: 1px solid var(--border) !important; }
+  .xx-cap-card:last-child { border-bottom: none !important; }
+}
+
+@media (max-width: 580px) {
+  .xx-context-step    { min-width: unset; }
+  .xx-compare-grid    { grid-template-columns: 1fr; }
+}

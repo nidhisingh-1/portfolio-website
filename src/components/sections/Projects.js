@@ -1,12 +1,10 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import './Projects.css';
 import { content } from '../../content';
 
 const Projects = () => {
   const { projects } = content;
-  const navigate = useNavigate();
 
   const cardVariants = {
     hidden: { opacity: 0, y: 30 },
@@ -44,7 +42,7 @@ const Projects = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
-              onClick={() => navigate(`/work/${project.slug}`)}
+              onClick={() => window.open(`/work/${project.slug}`, '_blank', 'noopener,noreferrer')}
             >
               {project.image && (
                 <div className="project-image">
