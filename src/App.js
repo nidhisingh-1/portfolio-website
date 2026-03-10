@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import './App.css';
 import { ThemeProvider } from './contexts/ThemeContext';
 
@@ -137,6 +138,7 @@ function App() {
             <Route path="/work/:slug" element={<ProjectDetailPage />} />
           </Routes>
           <ResumeModal isOpen={resumeOpen} onClose={() => setResumeOpen(false)} />
+          <SpeedInsights />
         </ThemeProvider>
       </BrowserRouter>
     </HelmetProvider>
